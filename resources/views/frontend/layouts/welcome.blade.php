@@ -1,0 +1,79 @@
+<link href="{{ asset('css/mislider.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('css/mislider-custom.css') }}" rel="stylesheet" type="text/css" />
+<!-- welcome -->
+<div class="welcome">
+	<div class="container">
+		<h3 class="agileits_w3layouts_head">Welcome to our <span>Plantation</span></h3>
+		<div class="w3_agile_image">
+			<img src="{{ asset('images/1.png') }}" alt=" " class="img-responsive" />
+		</div>
+		<p class="agile_para">Morbi viverra lacus commodo felis semper, eu iaculis lectus nulla at sapien blandit sollicitudin.</p>
+	</div>
+	<div class="mis-stage w3_agileits_welcome_grids"> 
+		<!-- The element to select and apply miSlider to - the class is optional -->
+		<ol class="mis-slider">
+			<li class="mis-slide"> 
+				<figure> 
+					<img src="{{ asset('images/2.png') }}" alt=" " class="img-responsive" />
+					<figcaption>Strawberry</figcaption>
+				</figure>
+			</li>
+			<li class="mis-slide"> 
+				<figure> 
+					<img src="{{ asset('images/3.png') }}" alt=" " class="img-responsive" />
+					<figcaption>Orange</figcaption>
+				</figure>
+			</li>
+			<li class="mis-slide"> 
+				<figure> 
+					<img src="{{ asset('images/4.png') }}" alt=" " class="img-responsive" />
+					<figcaption>Pomegranates</figcaption>
+				</figure>
+			</li>
+			<li class="mis-slide"> 
+				<figure> 
+					<img src="{{ asset('images/5.png') }}" alt=" " class="img-responsive" />
+					<figcaption>Lemon</figcaption>
+				</figure>
+			</li>
+			<li class="mis-slide"> 
+				<figure> 
+					<img src="{{ asset('images/6.png') }}" alt=" " class="img-responsive" />
+					<figcaption>Kiwi Fruits</figcaption>
+				</figure>
+			</li>
+			<li class="mis-slide"> 
+				<figure> 
+					<img src="{{ asset('images/7.png') }}" alt=" " class="img-responsive" />
+					<figcaption>Apples</figcaption>
+				</figure>
+			</li>
+		</ol>
+	</div>
+</div>
+<!-- //welcome -->
+<!-- mislider -->
+<script src="{{ asset('js/mislider.js') }}" type="text/javascript"></script>
+<script type="text/javascript">
+	jQuery(function ($) {
+		var slider = $('.mis-stage').miSlider({
+			//  The height of the stage in px. Options: false or positive integer. false = height is calculated using maximum slide heights. Default: false
+			stageHeight: 380,
+			//  Number of slides visible at one time. Options: false or positive integer. false = Fit as many as possible.  Default: 1
+			slidesOnStage: false,
+			//  The location of the current slide on the stage. Options: 'left', 'right', 'center'. Defualt: 'left'
+			slidePosition: 'center',
+			//  The slide to start on. Options: 'beg', 'mid', 'end' or slide number starting at 1 - '1','2','3', etc. Defualt: 'beg'
+			slideStart: 'mid',
+			//  The relative percentage scaling factor of the current slide - other slides are scaled down. Options: positive number 100 or higher. 100 = No scaling. Defualt: 100
+			slideScaling: 150,
+			//  The vertical offset of the slide center as a percentage of slide height. Options:  positive or negative number. Neg value = up. Pos value = down. 0 = No offset. Default: 0
+			offsetV: -5,
+			//  Center slide contents vertically - Boolean. Default: false
+			centerV: true,
+			//  Opacity of the prev and next button navigation when not transitioning. Options: Number between 0 and 1. 0 (transparent) - 1 (opaque). Default: .5
+			navButtonsOpacity: 1,
+		});
+	});
+</script>
+<!-- //mislider -->
