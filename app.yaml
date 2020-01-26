@@ -1,0 +1,18 @@
+runtime: php
+env: flex
+
+runtime_config:
+  document_root: public
+  composer_flags: --no-dev
+
+skip_files:
+  - .env
+
+env_variables:
+  APP_URL: /
+  APP_ENV: production
+  APP_LOG: errorlog
+  APP_DEBUG: false
+  APP_KEY: MY_APP_KEY
+  STORAGE_DIR: /tmp
+  VIEW_COMPILED_PATH: /tmp

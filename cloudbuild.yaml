@@ -1,0 +1,32 @@
+steps:
+- name: 'gcr.io/cloud-builders/gsutil'
+    args:
+    - cp
+    - .env.example
+    - .env
+- name: 'docker/compose:1.24.0'
+    args:
+    - run
+    - app
+    - composer
+    - install
+    - --optimize-autoloader
+    - --no-interaction
+    - --no-ansi
+    - --no-progress
+    - --no-scripts
+    - --prefer-dist
+- name: 'gcr.io/cloud-builders/gsutil'
+    args:
+    - sed
+    - -i
+    - ''
+    - "s#MY_APP_KEY#$(php artisan key:generate --show --no-ansi)#"
+    - app.yaml
+- name: 'gcr.io/cloud-builders/gcloud'
+    args:
+    - app
+    - deploy
+    - --no-promote
+timeout: '600s'
+    
