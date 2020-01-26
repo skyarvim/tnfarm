@@ -1,6 +1,5 @@
 steps:
   - name: gcr.io/cloud-builders/docker
     args: 
-    - pull
-    - asia.gcr.io/tnfarm/appengine/default.20200124t094123:latest
+    - -v
   timeout: 600s
