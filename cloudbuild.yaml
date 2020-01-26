@@ -4,18 +4,11 @@ steps:
   - cp
   - .env.example
   - .env
-- name: 'docker/compose:1.24.0'
+steps:
+- name: 'gcr.io/cloud-builders/gsutil'
   args:
-  - run
-  - app
   - composer
-  - install
-  - --optimize-autoloader
-  - --no-interaction
-  - --no-ansi
-  - --no-progress
-  - --no-scripts
-  - --prefer-dist
+  - update
 - name: 'gcr.io/cloud-builders/gsutil'
   args:
   - sed
