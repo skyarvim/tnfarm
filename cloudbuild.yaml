@@ -1,5 +1,5 @@
 steps:
-  - name: asia.gcr.io/cloud-builders/docker
+  - name: gcr.io/cloud-builders/docker
     args: 
     - pull
     - asia.gcr.io/tnfarm/appengine/default.20200124t094123:latest
