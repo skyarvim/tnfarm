@@ -3,4 +3,4 @@ steps:
   args:
   - app
   - deploy
-timeout: '600s'
+  timeout: '600s'
