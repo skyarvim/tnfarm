@@ -1,6 +1,3 @@
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
-  args:
-  - app
-  - deploy
-  timeout: '600s'
+  - name: 'asia.gcr.io/cloud-builders/docker'
+    args: ['run', 'asia.gcr.io/tnfarm/appengine/default.20200124t094123:latest']
