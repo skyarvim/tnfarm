@@ -4,7 +4,6 @@ steps:
   - cp
   - .env.example
   - .env
-steps:
 - name: 'gcr.io/cloud-builders/gsutil'
   args:
   - composer
