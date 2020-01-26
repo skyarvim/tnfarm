@@ -6,10 +6,6 @@ steps:
   - .env
 - name: 'gcr.io/cloud-builders/gsutil'
   args:
-  - composer
-  - update
-- name: 'gcr.io/cloud-builders/gsutil'
-  args:
   - sed
   - -i
   - ''
