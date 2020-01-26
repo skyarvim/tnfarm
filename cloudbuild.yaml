@@ -4,9 +4,18 @@ steps:
   - cp
   - .env.example
   - .env
+- name: '$PROJECT_ID/composer'
+  args:
+  - update
+- name: 'gcr.io/cloud-builders/gsutil'
+  args:
+  - sed
+  - -i
+  - ''
+  - "s#MY_APP_KEY#$(php artisan key:generate --show --no-ansi)#"
+  - app.yaml
 - name: 'gcr.io/cloud-builders/gcloud'
   args:
   - app
   - deploy
-  - --no-promote
 timeout: '600s'
