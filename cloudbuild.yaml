@@ -1,4 +1,11 @@
 steps:
+- name: gcr.io/cloud-builders/gcloud
+  args:
+  - source
+  - repos
+  - clone
+  - github_skyarvim_tnfarm
+  - tnfarm
 - name: gcr.io/$PROJECT_ID/composer
   args:
   - update
