@@ -10,3 +10,8 @@ steps:
   args:
   - update
   dir: tnfarm
+- name: gcr.io/cloud-builders/gcloud
+  args:
+  - app
+  - deploy
+  dir: tnfarm
