@@ -1,4 +1,8 @@
 steps:
-  - name: 'asia.gcr.io/cloud-builders/docker'
-    args: ['run', 'asia.gcr.io/tnfarm/appengine/default.20200124t094123:latest']
-  timeout: '600s'
+- name: gcr.io/cloud-builders/gcloud
+  args:
+  - source
+  - repos
+  - clone
+  - github_skyarvim_tnfarm
+  - tnfarm
