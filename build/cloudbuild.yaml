@@ -6,10 +6,6 @@ steps:
   - clone
   - github_skyarvim_tnfarm
   - tnfarm/
-- name: gcr.io/$PROJECT_ID/composer
-  args:
-  - update
-  dir: tnfarm/
 - name: gcr.io/cloud-builders/gcloud
   args:
   - app
