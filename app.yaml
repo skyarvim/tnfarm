@@ -2,7 +2,7 @@ runtime: php
 env: flex
 
 runtime_config:
-  document_root: /workspace/$PROJECT_ID/public
+  document_root: /workspace/tnfarm/public
   composer_flags: --no-dev
 
 skip_files:
