@@ -13,6 +13,6 @@ env_variables:
   APP_ENV: production
   APP_LOG: errorlog
   APP_DEBUG: false
-  APP_KEY: API_KEY
+  APP_KEY: MY_APP_KEY
   STORAGE_DIR: /tmp
   VIEW_COMPILED_PATH: /tmp
