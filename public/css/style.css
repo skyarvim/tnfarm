@@ -363,7 +363,7 @@ button.close {
 /*-- //bootstrap-pop-up --*/
 /*-- banner-bottom --*/
 .agileits_banner_bottom_left{
-	background:url(/images/1.jpg) no-repeat 0px 0px;
+	background: url(/images/1.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -371,7 +371,7 @@ button.close {
 	-ms-background-size:cover;
 }
 .agileits_banner_bottom_left1{
-	background:url(/images/2.jpg) no-repeat 0px 0px;
+	background: url(/images/2.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -379,7 +379,7 @@ button.close {
 	-ms-background-size:cover;
 }
 .agileits_banner_bottom_left2{
-	background:url(/images/3.jpg) no-repeat 0px 0px;
+	background: url(/images/3.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
