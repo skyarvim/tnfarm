@@ -6,7 +6,7 @@ steps:
   - clone
   - github_skyarvim_tnfarm
   - tnfarm/
--name: gcr.io/cloud-builders/git
+- name: gcr.io/cloud-builders/git
   args:
   - clone
   - https://github.com/laradock/laradock.git
