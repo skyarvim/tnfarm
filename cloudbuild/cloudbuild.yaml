@@ -10,18 +10,14 @@ steps:
   entrypoint: /bin/bash
   dir: tnfarm/
   args: [-c, gsutil cp cloudbuild/app.yaml .]
-- name: gcr.io/cloud-builders/gsutil
-  entrypoint: /bin/bash
-  dir: tnfarm/
-  args: [-c, gsutil cp cloudbuild/.gcloudignore .]
 - name: gcr.io/tnfarm/php
   entrypoint: /bin/bash
   dir: tnfarm/
-  args: [-c, php artisan key:generate --show --no-ansi > mykey]
+  args: [-c, php artisan key:generate --show --no-ansi > my_php_key]
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: /bin/bash
   dir: tnfarm/
-  args: [-c, sed -i "s#MY_APP_KEY#$(cat mykey)#" app.yaml]
+  args: [-c, sed -i "s#MY_APP_KEY#$(cat my_php_key)#" app.yaml]
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: /bin/bash
   args: [-c, gcloud app deploy tnfarm/app.yaml --stop-previous-version]
