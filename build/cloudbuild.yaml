@@ -34,4 +34,5 @@ steps:
   - app
   - deploy
   - tnfarm/app.yaml
+  - --stop-previous-version
 timeout: 1800s
