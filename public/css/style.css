@@ -34,7 +34,7 @@ input[type="submit"],input[type="reset"],a{
 }
 /*-- banner --*/
 .banner{
-	background: url(../images/banner.jpg) no-repeat 0px 0px;
+	background: url(/images/banner.jpg) no-repeat 0px 0px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -44,7 +44,7 @@ input[type="submit"],input[type="reset"],a{
 	position: relative;
 }
 .banner1{
-	background: url(../images/banner.jpg) no-repeat 0px 0px;
+	background: url(/images/banner.jpg) no-repeat 0px 0px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -363,7 +363,7 @@ button.close {
 /*-- //bootstrap-pop-up --*/
 /*-- banner-bottom --*/
 .agileits_banner_bottom_left{
-	background:url(../images/1.jpg) no-repeat 0px 0px;
+	background:url(/images/1.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -371,7 +371,7 @@ button.close {
 	-ms-background-size:cover;
 }
 .agileits_banner_bottom_left1{
-	background:url(../images/2.jpg) no-repeat 0px 0px;
+	background:url(/images/2.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -379,7 +379,7 @@ button.close {
 	-ms-background-size:cover;
 }
 .agileits_banner_bottom_left2{
-	background:url(../images/3.jpg) no-repeat 0px 0px;
+	background:url(/images/3.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -770,7 +770,7 @@ figure.agileits_effect_moses:hover img {
 /*-- //news --*/
 /*-- newsletter --*/
 .newsletter{
-	background: url(../images/7.jpg) no-repeat 0px 0px;
+	background: url(/images/7.jpg) no-repeat 0px 0px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -817,7 +817,7 @@ figure.agileits_effect_moses:hover img {
 /*-- //newsletter --*/
 /*-- footer --*/
 .footer{
-    background: url(../images/8.jpg) no-repeat 0px 0px;
+    background: url(/images/8.jpg) no-repeat 0px 0px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -944,7 +944,7 @@ figure.agileits_effect_moses:hover img {
 	height: 32px;
 	border: none;
 	text-indent: 100%;
-	background: url(../images/arrow.png) no-repeat 0px 0px;
+	background: url(/images/arrow.png) no-repeat 0px 0px;
 }
 #toTopHover {
 	width: 32px;
@@ -1061,7 +1061,7 @@ figure.agileits_effect_moses:hover img {
 /*-- //about --*/
 /*-- about-bottom --*/
 .about-bottom{
-	background: url(../images/9.jpg) no-repeat 0px 0px;
+	background: url(/images/9.jpg) no-repeat 0px 0px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1149,7 +1149,7 @@ figure.agileits_effect_moses:hover img {
 /*-- //services --*/
 /*-- services-bottom --*/
 .services-bottom{
-	background: url(../images/9.jpg) no-repeat 0px 0px;
+	background: url(/images/9.jpg) no-repeat 0px 0px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
