@@ -1,56 +1,24 @@
 steps:
 - name: gcr.io/cloud-builders/gcloud
-  args:
-  - source
-  - repos
-  - clone
-  - github_skyarvim_tnfarm
-  - tnfarm/
-- name: gcr.io/cloud-builders/git
-  args:
-  - clone
-  - https://github.com/laradock/laradock.git
-  - laradock
+  entrypoint: /bin/bash
+  args: [-c, gcloud source repos clone github_skyarvim_tnfarm tnfarm/]
+- name: gcr.io/tnfarm/composer
+  entrypoint: /bin/bash
   dir: tnfarm/
+  args: [-c, composer install]
 - name: gcr.io/cloud-builders/gsutil
-  args:
-  - cp
-  - env-example
-  - .env
-  dir: tnfarm/laradock/
-- name: gcr.io/$PROJECT_ID/docker-compose
-  args:
-  - up
-  - -d
-  - nginx
-  dir: tnfarm/laradock/
-- name: gcr.io/cloud-builders/gsutil
-  args:
-  - cp
-  - .env.example
-  - .env
+  entrypoint: /bin/bash
   dir: tnfarm/
-- name: gcr.io/$PROJECT_ID/composer
-  args:
-  - update
+  args: [-c, gsutil cp build/app.yaml .]
+- name: gcr.io/tnfarm/php
+  entrypoint: /bin/bash
   dir: tnfarm/
-- name: gcr.io/cloud-builders/gsutil
-  args:
-  - cp
-  - build/app.yaml
-  - .
-  dir: tnfarm/
-- name: 'gcr.io/cloud-builders/gcloud'
-  entrypoint: /bin/sh
-  args:
-  - '-c'
-  - |
-    sed -i '' "s#MY_APP_KEY#$(php artisan key:generate --show --no-ansi)#" app.yaml
-  dir: tnfarm/
+  args: [-c, php artisan key:generate --show --no-ansi > mykey]
 - name: gcr.io/cloud-builders/gcloud
-  args:
-  - app
-  - deploy
-  - tnfarm/app.yaml
-  - --stop-previous-version
+  entrypoint: /bin/bash
+  dir: tnfarm/
+  args: [-c, sed -i "s#MY_APP_KEY#$(cat mykey)#" app.yaml]
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: /bin/bash
+  args: [-c, gcloud app deploy tnfarm/app.yaml --stop-previous-version]
 timeout: 1800s
