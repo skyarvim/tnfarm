@@ -10,6 +10,10 @@ steps:
   entrypoint: /bin/bash
   dir: tnfarm/
   args: [-c, gsutil cp build/app.yaml .]
+- name: gcr.io/cloud-builders/gsutil
+  entrypoint: /bin/bash
+  dir: tnfarm/
+  args: [-c, gsutil cp build/.gcloudignore .]
 - name: gcr.io/tnfarm/php
   entrypoint: /bin/bash
   dir: tnfarm/
