@@ -10,7 +10,9 @@
 				</div>
 				<div class="col-xs-8 wthree_banner_bottom_grid_right">	
 					<h4>Free Consultation</h4>
+{{--
 					<p>Morbi viverra lacus commodo felis semper, eu iaculis lectus feugiat.</p>
+--}}
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -26,7 +28,9 @@
 				</div>
 				<div class="col-xs-8 wthree_banner_bottom_grid_right">	
 					<h4>Certified Products</h4>
+{{--
 					<p>Morbi viverra lacus commodo felis semper, eu iaculis lectus feugiat.</p>
+--}}
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -42,7 +46,9 @@
 				</div>
 				<div class="col-xs-8 wthree_banner_bottom_grid_right">	
 					<h4>Free Helpline</h4>
+{{--
 					<p>Morbi viverra lacus commodo felis semper, eu iaculis lectus feugiat.</p>
+--}}
 				</div>
 				<div class="clearfix"> </div>
 			</div>

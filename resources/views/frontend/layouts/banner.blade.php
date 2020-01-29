@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="w3_agileits_banner_main_grid">
 			<div class="w3_agile_logo">
-				<h1><a href="{{ route('home') }}"><span>G</span>erminate<i>Grow healthy products</i></a></h1>
+				<h1><a href="{{ route('home') }}"><span>台</span>南農場<i>Tainan Farm</i></a></h1>
 			</div>
 			<div class="agile_social_icons_banner">
 				<ul class="agileits_social_list">
@@ -46,8 +46,10 @@
 		<div class="w3_banner_info">
 			<div class="w3_banner_info_grid">
 				<h3 class="test">I'm Planting A Tree To Teach Me To Gather Strength From My Deepest Roots</h3>
+{{--
 				<p>Aenean congue vitae mauris sed tristique. Mauris quis nulla at sapien blandit 
 					sollicitudin. Nunc tortor lorem, viverra sed diam ut, blandit efficitur leo.</p>
+--}}
 {{--
 				<ul>
 					<li><a href="{{ route('contact') }}" class="w3l_contact">Contact Us</a></li>
