@@ -28,10 +28,12 @@
 						<nav class="menu menu--horatio link-effect-8" id="link-effect-8">
 							<ul class="w3layouts_menu__list">
 								<li class="@yield('menu_home')"><a href="{{ route('home') }}">Home</a></li>
+{{--
 								<li class="@yield('menu_about')"><a href="{{ route('about') }}">About Us</a></li> 
 								<li class="@yield('menu_services')"><a href="{{ route('services') }}">Services</a></li>
 								<li class="@yield('menu_gallery')"><a href="{{ route('gallery') }}">Gallery</a></li> 
 								<li class="@yield('menu_contact')"><a href="{{ route('contact') }}">Contact Us</a></li>
+--}}
 							</ul>
 						</nav>
 					</div>
@@ -46,10 +48,12 @@
 				<h3 class="test">I'm Planting A Tree To Teach Me To Gather Strength From My Deepest Roots</h3>
 				<p>Aenean congue vitae mauris sed tristique. Mauris quis nulla at sapien blandit 
 					sollicitudin. Nunc tortor lorem, viverra sed diam ut, blandit efficitur leo.</p>
+{{--
 				<ul>
 					<li><a href="{{ route('contact') }}" class="w3l_contact">Contact Us</a></li>
 					<li><a href="#" class="w3ls_more" data-toggle="modal" data-target="#myModal">Read More</a></li>
 				</ul>
+--}}
 			</div>
 		</div>
 		<div class="thim-click-to-bottom">

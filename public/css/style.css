@@ -396,7 +396,7 @@ button.close {
     left: 0%;
     width: 100%;
     height: 100%;
-    background:rgba(25, 25, 25, 0.55);
+    background:rgba(25, 25, 25, 0);
 }
 .w3_agileits_banner_bottom_pos_grid{
 	padding:7em 3em;
@@ -429,7 +429,7 @@ button.close {
 .agileits_banner_bottom_left:hover .agileinfo_banner_bottom_pos,
 .agileits_banner_bottom_left1:hover .agileinfo_banner_bottom_pos,
 .agileits_banner_bottom_left2:hover .agileinfo_banner_bottom_pos{
-	background:rgba(25, 25, 25, 0.7);
+	background:rgba(25, 25, 25, 0.4);
 }
 /* Radial Out */
 .hvr-radial-out {
