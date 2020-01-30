@@ -9,7 +9,7 @@
 					</div>
 				</div>
 				<div class="col-xs-8 wthree_banner_bottom_grid_right">	
-					<h4>Free Consultation</h4>
+					<h4>發芽 Germination</h4>
 {{--
 					<p>Morbi viverra lacus commodo felis semper, eu iaculis lectus feugiat.</p>
 --}}
@@ -27,7 +27,7 @@
 					</div>
 				</div>
 				<div class="col-xs-8 wthree_banner_bottom_grid_right">	
-					<h4>Certified Products</h4>
+					<h4>收穫 Harvest</h4>
 {{--
 					<p>Morbi viverra lacus commodo felis semper, eu iaculis lectus feugiat.</p>
 --}}
@@ -45,7 +45,7 @@
 					</div>
 				</div>
 				<div class="col-xs-8 wthree_banner_bottom_grid_right">	
-					<h4>Free Helpline</h4>
+					<h4>復育 Restoration</h4>
 {{--
 					<p>Morbi viverra lacus commodo felis semper, eu iaculis lectus feugiat.</p>
 --}}
