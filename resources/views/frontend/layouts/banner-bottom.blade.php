@@ -9,7 +9,7 @@
 					</div>
 				</div>
 				<div class="col-xs-8 wthree_banner_bottom_grid_right">	
-					<h4>發芽 Germination</h4>
+					<h4>繁花 Blossom</h4>
 {{--
 					<p>Morbi viverra lacus commodo felis semper, eu iaculis lectus feugiat.</p>
 --}}
