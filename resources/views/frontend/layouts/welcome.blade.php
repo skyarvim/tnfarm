@@ -3,7 +3,7 @@
 <!-- welcome -->
 <div id="welcome" class="welcome">
 	<div class="container">
-		<h3 class="agileits_w3layouts_head">觀迎認識我們的農作物 Welcome to our <span>Plantation</span></h3>
+		<h3 class="agileits_w3layouts_head">觀迎認識我們的農作物</br>Welcome to our <span>Plantation</span></h3>
 		<div class="w3_agile_image">
 			<img src="{{ asset('images/1.png') }}" alt=" " class="img-responsive" />
 		</div>
