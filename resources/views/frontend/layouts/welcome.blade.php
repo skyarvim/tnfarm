@@ -1,29 +1,36 @@
 <link href="{{ asset('css/mislider.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('css/mislider-custom.css') }}" rel="stylesheet" type="text/css" />
 <!-- welcome -->
-<div class="welcome">
+<div id="welcome" class="welcome">
 	<div class="container">
-		<h3 class="agileits_w3layouts_head">Welcome to our <span>Plantation</span></h3>
+		<h3 class="agileits_w3layouts_head">觀迎認識我們的農作物 Welcome to our <span>Plantation</span></h3>
 		<div class="w3_agile_image">
 			<img src="{{ asset('images/1.png') }}" alt=" " class="img-responsive" />
 		</div>
-		<p class="agile_para">Morbi viverra lacus commodo felis semper, eu iaculis lectus nulla at sapien blandit sollicitudin.</p>
+		<p class="agile_para">有機栽培，天然營養。</p>
 	</div>
 	<div class="mis-stage w3_agileits_welcome_grids"> 
 		<!-- The element to select and apply miSlider to - the class is optional -->
 		<ol class="mis-slider">
 			<li class="mis-slide"> 
 				<figure> 
-					<img src="{{ asset('images/2.png') }}" alt=" " class="img-responsive" />
-					<figcaption>Strawberry</figcaption>
+					<img src="{{ asset('images/mango.png') }}" alt=" " class="img-responsive" />
+					<figcaption>芒果 Mango</figcaption>
 				</figure>
 			</li>
 			<li class="mis-slide"> 
 				<figure> 
-					<img src="{{ asset('images/3.png') }}" alt=" " class="img-responsive" />
-					<figcaption>Orange</figcaption>
+					<img src="{{ asset('images/sesame.png') }}" alt=" " class="img-responsive" />
+					<figcaption>芝麻 Sesame</figcaption>
 				</figure>
 			</li>
+			<li class="mis-slide"> 
+				<figure> 
+					<img src="{{ asset('images/td.png') }}" alt=" " class="img-responsive" />
+					<figcaption>獨角仙 T. dichotomus</figcaption>
+				</figure>
+			</li>
+{{--
 			<li class="mis-slide"> 
 				<figure> 
 					<img src="{{ asset('images/4.png') }}" alt=" " class="img-responsive" />
@@ -48,6 +55,7 @@
 					<figcaption>Apples</figcaption>
 				</figure>
 			</li>
+--}}
 		</ol>
 	</div>
 </div>

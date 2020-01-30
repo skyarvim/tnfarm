@@ -28,6 +28,7 @@
 						<nav class="menu menu--horatio link-effect-8" id="link-effect-8">
 							<ul class="w3layouts_menu__list">
 								<li class="@yield('menu_home')"><a href="{{ route('home') }}">Home</a></li>
+								<li class="@yield('menu_admin')"><a href="{{ route('home') }}">Admin</a></li>
 {{--
 								<li class="@yield('menu_about')"><a href="{{ route('about') }}">About Us</a></li> 
 								<li class="@yield('menu_services')"><a href="{{ route('services') }}">Services</a></li>
@@ -45,7 +46,7 @@
 @if( $bannerinfo == true )
 		<div class="w3_banner_info">
 			<div class="w3_banner_info_grid">
-				<h3 class="test">I'm Planting A Tree To Teach Me To Gather Strength From My Deepest Roots</h3>
+				<h3 class="test">這是一個推廣台南農產品的平台</h3>
 {{--
 				<p>Aenean congue vitae mauris sed tristique. Mauris quis nulla at sapien blandit 
 					sollicitudin. Nunc tortor lorem, viverra sed diam ut, blandit efficitur leo.</p>
@@ -59,7 +60,7 @@
 			</div>
 		</div>
 		<div class="thim-click-to-bottom">
-			<a href="#welcome_bottom" class="scroll">
+			<a href="#welcome" class="scroll">
 				<i class="fa  fa-chevron-down"></i>
 			</a>
 		</div>
@@ -100,7 +101,7 @@
 		$('.test').textFx({
 			type: 'fadeIn',
 			iChar: 100,
-			iAnim: 1000
+			iAnim: 2000
 		});
 	});
 </script>
