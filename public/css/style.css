@@ -34,7 +34,7 @@ input[type="submit"],input[type="reset"],a{
 }
 /*-- banner --*/
 .banner{
-	background: url(/images/banner.jpg) no-repeat 0px 0px;
+	background: url(/images/banner0.jpg) no-repeat 0px 0px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -44,7 +44,7 @@ input[type="submit"],input[type="reset"],a{
 	position: relative;
 }
 .banner1{
-	background: url(/images/banner.jpg) no-repeat 0px 0px;
+	background: url(/images/banner0.jpg) no-repeat 0px 0px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -825,6 +825,7 @@ figure.agileits_effect_moses:hover img {
     -ms-background-size: cover;
 	background-attachment:fixed;
 	padding:5em 0 0;
+	position: relative;
 }
 .agileits_w3layouts_footer_logo h2 a {
     font-size: 1.2em;

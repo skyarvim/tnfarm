@@ -28,12 +28,11 @@
 						<nav class="menu menu--horatio link-effect-8" id="link-effect-8">
 							<ul class="w3layouts_menu__list">
 								<li class="@yield('menu_home')"><a href="{{ route('home') }}">Home</a></li>
-								<li class="@yield('menu_admin')"><a href="{{ route('home') }}">Admin</a></li>
-{{--
 								<li class="@yield('menu_about')"><a href="{{ route('about') }}">About Us</a></li> 
 								<li class="@yield('menu_services')"><a href="{{ route('services') }}">Services</a></li>
 								<li class="@yield('menu_gallery')"><a href="{{ route('gallery') }}">Gallery</a></li> 
 								<li class="@yield('menu_contact')"><a href="{{ route('contact') }}">Contact Us</a></li>
+{{--
 --}}
 							</ul>
 						</nav>
@@ -46,7 +45,7 @@
 @if( $bannerinfo == true )
 		<div class="w3_banner_info">
 			<div class="w3_banner_info_grid">
-				<h3 class="test">這是一個推廣台南農產品的平台</h3>
+				<h3 class="test">我們致力於推廣台南的農作物與特產品，希望能讓大家品嘗到來自南部的香甜美味。</h3>
 {{--
 				<p>Aenean congue vitae mauris sed tristique. Mauris quis nulla at sapien blandit 
 					sollicitudin. Nunc tortor lorem, viverra sed diam ut, blandit efficitur leo.</p>

@@ -10,7 +10,7 @@
 			<div class="col-md-4 agileinfo_footer_grid">
 				<h3>聯絡資訊 Contact Info</h3>
 				<h4>電話 Call Us <span>+886 980 797 246</span></h4>
-				<p>公司 My Company <span>709 台南市安南區安中路二段 71 巷 6 號</span><span>709 No. 6, Ln. 71, Sec. 2, Anzhong Rd., Annan Dist., Tainan City 709, Taiwan (R.O.C.)</span></p>
+				<p>公司 My Company <span>709 台南市安南區</span><span>709 Annan Dist., Tainan City 709, Taiwan (R.O.C.)</span></p>
 				<ul class="agileits_social_list">
 					<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 					<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
