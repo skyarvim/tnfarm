@@ -7,7 +7,7 @@
 		<div class="w3_agile_image">
 			<img src="{{ asset('images/1.png') }}" alt=" " class="img-responsive" />
 		</div>
-		<p class="agile_para">有機栽培，天然營養。</p>
+		<p class="agile_para">有機栽培，天然營養。</br>Organic Cultivation, Natural and Nutritious.</p>
 	</div>
 	<div class="mis-stage w3_agileits_welcome_grids"> 
 		<!-- The element to select and apply miSlider to - the class is optional -->
