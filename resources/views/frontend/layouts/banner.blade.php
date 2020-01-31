@@ -28,11 +28,11 @@
 						<nav class="menu menu--horatio link-effect-8" id="link-effect-8">
 							<ul class="w3layouts_menu__list">
 								<li class="@yield('menu_home')"><a href="{{ route('home') }}">Home</a></li>
+{{--
 								<li class="@yield('menu_about')"><a href="{{ route('about') }}">About Us</a></li> 
 								<li class="@yield('menu_services')"><a href="{{ route('services') }}">Services</a></li>
 								<li class="@yield('menu_gallery')"><a href="{{ route('gallery') }}">Gallery</a></li> 
 								<li class="@yield('menu_contact')"><a href="{{ route('contact') }}">Contact Us</a></li>
-{{--
 --}}
 							</ul>
 						</nav>
