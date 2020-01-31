@@ -41,7 +41,7 @@ input[type="submit"],input[type="reset"],a{
     -o-background-size: cover;
     -ms-background-size: cover;
     min-height: 770px;
-	position: center;
+	position: relative;
 }
 .banner1{
 	background: url(/images/banner0.jpg) no-repeat 0px 0px;
@@ -825,7 +825,6 @@ figure.agileits_effect_moses:hover img {
     -ms-background-size: cover;
 	background-attachment:fixed;
 	padding:5em 0 0;
-	position:center;
 }
 .agileits_w3layouts_footer_logo h2 a {
     font-size: 1.2em;
