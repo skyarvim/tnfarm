@@ -3,7 +3,7 @@
     <div class="container">
         <h3 class="agileits_w3layouts_head">Why <span>Choose</span> Us</h3>
         <div class="w3_agile_image">
-            <img src="{{ asset('images/1.png') }}" alt=" " class="img-responsive" />
+            <img src="{{ asset('frontend/images/1.png') }}" alt=" " class="img-responsive" />
         </div>
         <p class="agile_para">Morbi viverra lacus commodo felis semper, eu iaculis lectus nulla at sapien blandit sollicitudin.</p>
         <div class="w3ls_news_grids"> 
@@ -49,7 +49,7 @@
 </div>
 <!-- //about -->
 <!-- skills -->
-<script src="{{ asset('js/skill.bars.jquery.js') }}"></script>
+<script src="{{ asset('frontend/js/skill.bars.jquery.js') }}"></script>
 <script>
     $(document).ready(function(){
         $('.skillbar').skillBars({

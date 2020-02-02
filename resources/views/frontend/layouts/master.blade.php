@@ -16,38 +16,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //custom-theme -->
-<link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
-<link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ asset('frontend/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
 <!-- js -->
-<script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('frontend/js/jquery-2.1.4.min.js') }}"></script>
 <!-- //js -->
+@yield('headscripts')
 <!-- font-awesome-icons -->
-<link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet"> 
+<link href="{{ asset('frontend/css/font-awesome.css') }}" rel="stylesheet"> 
 <!-- //font-awesome-icons -->
 <link href="//fonts.googleapis.com/css?family=Bree+Serif&amp;subset=latin-ext" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 </head>
-	
 <body>
-
 @include('frontend.layouts.banner', ['bannerinfo' => $bannerinfo ])
-
 @include('frontend.layouts.pop-up')
-
 @if( $bannerbottom == true)
 @include('frontend.layouts.banner-bottom')
 @endif
-
 @yield('content')
-
 @include('frontend.layouts.footer')
-
+@yield('bodyscripts')
 <!-- start-smoth-scrolling -->
-<script type="text/javascript" src="{{ asset('js/move-top.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/easing.js') }}"></script>
+<script type="text/javascript" src="{{ asset('frontend/js/move-top.js') }}"></script>
+<script type="text/javascript" src="{{ asset('frontend/js/easing.js') }}"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){		
+		$(".scroll").click(function(event){
 			event.preventDefault();
 			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 		});
@@ -65,12 +60,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			easingType: 'linear' 
 			};
 		*/
-		$().UItoTop({ easingType: 'easeOutQuart' });			
+		$().UItoTop({ easingType: 'easeOutQuart' });
 	});
 </script>
 <!-- //here ends scrolling icon -->
 <!-- for bootstrap working -->
-<script src="{{ asset('js/bootstrap.js') }}"></script>
+<script src="{{ asset('frontend/js/bootstrap.js') }}"></script>
 <!-- //for bootstrap working -->
 </body>
 </html>

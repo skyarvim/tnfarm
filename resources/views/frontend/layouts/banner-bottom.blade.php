@@ -10,9 +10,7 @@
 				</div>
 				<div class="col-xs-8 wthree_banner_bottom_grid_right">	
 					<h4>繁花 Blossom</h4>
-{{--
-					<p>Morbi viverra lacus commodo felis semper, eu iaculis lectus feugiat.</p>
---}}
+					<p>{{--  --}}</p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -28,9 +26,7 @@
 				</div>
 				<div class="col-xs-8 wthree_banner_bottom_grid_right">	
 					<h4>收穫 Harvest</h4>
-{{--
-					<p>Morbi viverra lacus commodo felis semper, eu iaculis lectus feugiat.</p>
---}}
+					<p>{{--  --}}</p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -46,9 +42,7 @@
 				</div>
 				<div class="col-xs-8 wthree_banner_bottom_grid_right">	
 					<h4>復育 Restoration</h4>
-{{--
-					<p>Morbi viverra lacus commodo felis semper, eu iaculis lectus feugiat.</p>
---}}
+					<p>{{--  --}}</p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>

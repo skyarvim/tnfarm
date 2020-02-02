@@ -1,67 +1,31 @@
-<link href="{{ asset('css/mislider.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('css/mislider-custom.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('frontend/css/mislider.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('frontend/css/mislider-custom.css') }}" rel="stylesheet" type="text/css" />
 <!-- welcome -->
 <div id="welcome" class="welcome">
 	<div class="container">
 		<h3 class="agileits_w3layouts_head">觀迎認識我們的農作物</br>Welcome to our <span>Plantation</span></h3>
 		<div class="w3_agile_image">
-			<img src="{{ asset('images/1.png') }}" alt=" " class="img-responsive" />
+			<img src="{{ asset('frontend/images/1.png') }}" alt=" " class="img-responsive" />
 		</div>
 		<p class="agile_para">有機栽培，天然營養。</br>Organic Cultivation, Natural and Nutritious.</p>
 	</div>
 	<div class="mis-stage w3_agileits_welcome_grids"> 
 		<!-- The element to select and apply miSlider to - the class is optional -->
 		<ol class="mis-slider">
-			<li class="mis-slide"> 
-				<figure> 
-					<img src="{{ asset('images/mango.png') }}" alt=" " class="img-responsive" />
-					<figcaption>芒果 Mango</figcaption>
+			@foreach($welcomes as $welcome)
+			<li class="mis-slide">
+				<figure>
+					<img src="{{ asset('uploads/welcome/' . $welcome->image) }}" alt=" " class="img-responsive" />
+					<figcaption>{{ $welcome->title }}</figcaption>
 				</figure>
 			</li>
-			<li class="mis-slide"> 
-				<figure> 
-					<img src="{{ asset('images/sesame.png') }}" alt=" " class="img-responsive" />
-					<figcaption>芝麻 Sesame</figcaption>
-				</figure>
-			</li>
-			<li class="mis-slide"> 
-				<figure> 
-					<img src="{{ asset('images/td.png') }}" alt=" " class="img-responsive" />
-					<figcaption>獨角仙 T. dichotomus</figcaption>
-				</figure>
-			</li>
-{{--
-			<li class="mis-slide"> 
-				<figure> 
-					<img src="{{ asset('images/4.png') }}" alt=" " class="img-responsive" />
-					<figcaption>Pomegranates</figcaption>
-				</figure>
-			</li>
-			<li class="mis-slide"> 
-				<figure> 
-					<img src="{{ asset('images/5.png') }}" alt=" " class="img-responsive" />
-					<figcaption>Lemon</figcaption>
-				</figure>
-			</li>
-			<li class="mis-slide"> 
-				<figure> 
-					<img src="{{ asset('images/6.png') }}" alt=" " class="img-responsive" />
-					<figcaption>Kiwi Fruits</figcaption>
-				</figure>
-			</li>
-			<li class="mis-slide"> 
-				<figure> 
-					<img src="{{ asset('images/7.png') }}" alt=" " class="img-responsive" />
-					<figcaption>Apples</figcaption>
-				</figure>
-			</li>
---}}
+			@endforeach
 		</ol>
 	</div>
 </div>
 <!-- //welcome -->
 <!-- mislider -->
-<script src="{{ asset('js/mislider.js') }}" type="text/javascript"></script>
+<script src="{{ asset('frontend/js/mislider.js') }}" type="text/javascript"></script>
 <script type="text/javascript">
 	jQuery(function ($) {
 		var slider = $('.mis-stage').miSlider({

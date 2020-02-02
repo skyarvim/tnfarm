@@ -3,13 +3,13 @@
     <div class="container">
         <h3 class="agileits_w3layouts_head">Meet Our <span>Amazing</span> Team</h3>
         <div class="w3_agile_image">
-            <img src="{{ asset('images/1.png') }}" alt=" " class="img-responsive" />
+            <img src="{{ asset('frontend/images/1.png') }}" alt=" " class="img-responsive" />
         </div>
         <p class="agile_para">Morbi viverra lacus commodo felis semper, eu iaculis lectus nulla at sapien blandit sollicitudin.</p>
         <div class="w3ls_news_grids w3_agileits_team_grids"> 
             <div class="col-md-3 w3_agileits_team_grid"> 
                 <div class="w3layouts_news_grid">
-                    <img src="{{ asset('images/10.jpg') }}" alt=" " class="img-responsive" />
+                    <img src="{{ asset('frontend/images/10.jpg') }}" alt=" " class="img-responsive" />
                     <div class="w3layouts_news_grid_pos">
                         <div class="wthree_text agileinfo_about_text">
                             <ul class="agileits_social_list">
@@ -25,7 +25,7 @@
             </div>
             <div class="col-md-3 w3_agileits_team_grid"> 
                 <div class="w3layouts_news_grid">
-                    <img src="{{ asset('images/11.jpg') }}" alt=" " class="img-responsive" />
+                    <img src="{{ asset('frontend/images/11.jpg') }}" alt=" " class="img-responsive" />
                     <div class="w3layouts_news_grid_pos">
                         <div class="wthree_text agileinfo_about_text">
                             <ul class="agileits_social_list">
@@ -41,7 +41,7 @@
             </div>
             <div class="col-md-3 w3_agileits_team_grid"> 
                 <div class="w3layouts_news_grid">
-                    <img src="{{ asset('images/12.jpg') }}" alt=" " class="img-responsive" />
+                    <img src="{{ asset('frontend/images/12.jpg') }}" alt=" " class="img-responsive" />
                     <div class="w3layouts_news_grid_pos">
                         <div class="wthree_text agileinfo_about_text">
                             <ul class="agileits_social_list">
@@ -57,7 +57,7 @@
             </div>
             <div class="col-md-3 w3_agileits_team_grid"> 
                 <div class="w3layouts_news_grid">
-                    <img src="{{ asset('images/13.jpg') }}" alt=" " class="img-responsive" />
+                    <img src="{{ asset('frontend/images/13.jpg') }}" alt=" " class="img-responsive" />
                     <div class="w3layouts_news_grid_pos">
                         <div class="wthree_text agileinfo_about_text">
                             <ul class="agileits_social_list">

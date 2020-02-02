@@ -8,7 +8,7 @@
 				</div>
 				<section>
 					<div class="modal-body">
-						<img src="{{ asset('images/4.jpg') }}" alt=" " class="img-responsive" />
+						<img src="{{ asset('frontend/images/4.jpg') }}" alt=" " class="img-responsive" />
 						<p>Ut enim ad minima veniam, quis nostrum 
 							exercitationem ullam corporis suscipit laboriosam, 
 							nisi ut aliquid ex ea commodi consequatur? Quis autem 

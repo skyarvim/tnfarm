@@ -11,30 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-})->name('home');
+Route::get('/', 'Frontend\HomeController@index')->name('home');
+Route::get('/about', 'Frontend\AboutController@index')->name('about');
 
-Route::get('/about', function () {
-    return view('frontend.about');
-})->name('about');
-
-Route::get('/services', function () {
-    return view('frontend.services');
-})->name('services');
-
-Route::get('/gallery', function () {
-    return view('frontend.gallery');
-})->name('gallery');
-
-Route::get('/contact', function () {
-    return view('frontend.contact');
-})->name('contact');
-
-Route::get('/icons', function () {
-    return view('frontend.icons');
-})->name('icons');
-
-Route::get('/typography', function () {
-    return view('frontend.typography');
-})->name('typography');
+Route::get('/admin/login', function () {
+    return view('backend.login');
+});
+Route::post('/admin/login', 'Auth\LoginController@login')->name('login');
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
+    Route::get('/admin/logout', 'Auth\LoginController@logout')->name('logout');
+    Route::get('/', 'Backend\WebsiteController@index')->name('website');
+    Route::resource('/welcome', 'Backend\WelcomeController', ['except'=> ['show']]);
+});

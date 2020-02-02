@@ -4,9 +4,4 @@
 
 @section('content')
 @include('frontend.layouts.welcome')
-{{--
-@include('frontend.layouts.welcome-bottom')
-@include('frontend.layouts.news')
-@include('frontend.layouts.newsletter')
---}}
 @endsection
