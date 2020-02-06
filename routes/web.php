@@ -11,15 +11,29 @@
 |
 */
 
+Route::get('/laravel', function () {
+    return view('welcome');
+});
+
 Route::get('/', 'Frontend\HomeController@index')->name('home');
 Route::get('/about', 'Frontend\AboutController@index')->name('about');
 
+/*
 Route::get('/admin/login', function () {
     return view('backend.login');
 });
 Route::post('/admin/login', 'Auth\LoginController@login')->name('login');
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
     Route::get('/admin/logout', 'Auth\LoginController@logout')->name('logout');
+    Route::get('/', 'Backend\WebsiteController@index')->name('website');
+    Route::resource('/welcome', 'Backend\WelcomeController', ['except'=> ['show']]);
+});
+*/
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('laravel.home');
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
     Route::get('/', 'Backend\WebsiteController@index')->name('website');
     Route::resource('/welcome', 'Backend\WelcomeController', ['except'=> ['show']]);
 });
