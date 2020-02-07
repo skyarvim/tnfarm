@@ -8,6 +8,9 @@ steps:
   args: [-c, composer install]
 - name: gcr.io/cloud-builders/gsutil
   entrypoint: /bin/bash
+  args: [-c, gsutil ls /]
+- name: gcr.io/cloud-builders/gsutil
+  entrypoint: /bin/bash
   args: [-c, gsutil cp cloudbuild/app.yaml .]
 - name: gcr.io/tnfarm/php
   entrypoint: /bin/bash
