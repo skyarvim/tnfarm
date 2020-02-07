@@ -8,7 +8,7 @@ steps:
   args: [-c, composer install]
 - name: gcr.io/cloud-builders/gsutil
   entrypoint: /bin/bash
-  args: [-c, gsutil ls /]
+  args: [-c, gsutil ls ${_MY_GCS_PATH}/app.yaml .]
 - name: gcr.io/cloud-builders/gsutil
   entrypoint: /bin/bash
   args: [-c, gsutil cp cloudbuild/app.yaml .]
@@ -25,3 +25,6 @@ steps:
     sed -i "s#MY_APP_KEY#$(cat my_php_key)#" tnfarm/app.yaml
     gcloud app deploy tnfarm/app.yaml --stop-previous-version
 timeout: 1800s
+
+substitutions:
+  _MY_GCS_PATH: gs://tnfarm.appspot.com
