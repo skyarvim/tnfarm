@@ -18,6 +18,6 @@ steps:
   args:
   - -c
   - |
-    sed -i "s#MY_APP_KEY#$(cat my_php_key)#" $PROJECT_ID/app.yaml
+    sed -i "s#MY_APP_KEY#$(cat $PROJECT_ID/my_php_key)#" $PROJECT_ID/app.yaml
     gcloud app deploy $PROJECT_ID/app.yaml --stop-previous-version
 timeout: 1800s
