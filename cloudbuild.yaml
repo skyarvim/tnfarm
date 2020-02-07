@@ -9,9 +9,6 @@ steps:
 - name: gcr.io/cloud-builders/gsutil
   entrypoint: /bin/bash
   args: [-c, gsutil cp gs://$PROJECT_ID.appspot.com/app.yaml .]
-- name: gcr.io/cloud-builders/gsutil
-  entrypoint: /bin/bash
-  args: [-c, gsutil cp cloudbuild/app.yaml .]
 - name: gcr.io/$PROJECT_ID/php
   entrypoint: /bin/bash
   dir: $PROJECT_ID/
