@@ -1,10 +1,10 @@
 steps:
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: /bin/bash
-  args: [-c, gcloud source repos clone github_skyarvim_tnfarm tnfarm/]
-- name: gcr.io/tnfarm/composer
+  args: [-c, gcloud source repos clone github_skyarvim_$PROJECT_ID $PROJECT_ID/]
+- name: gcr.io/$PROJECT_ID/composer
   entrypoint: /bin/bash
-  dir: tnfarm/
+  dir: $PROJECT_ID/
   args: [-c, composer install]
 - name: gcr.io/cloud-builders/gsutil
   entrypoint: /bin/bash
@@ -12,19 +12,18 @@ steps:
 - name: gcr.io/cloud-builders/gsutil
   entrypoint: /bin/bash
   args: [-c, gsutil cp cloudbuild/app.yaml .]
-- name: gcr.io/tnfarm/php
+- name: gcr.io/$PROJECT_ID/php
   entrypoint: /bin/bash
-  dir: tnfarm/
+  dir: $PROJECT_ID/
   args: [-c, php artisan key:generate --show --no-ansi > my_php_key]
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: /bin/bash
-  dir: tnfarm/
   args:
   - -c
   - |
-    sed -i "s#MY_APP_KEY#$(cat my_php_key)#" tnfarm/app.yaml
-    gcloud app deploy tnfarm/app.yaml --stop-previous-version
+    sed -i "s#MY_APP_KEY#$(cat my_php_key)#" $PROJECT_ID/app.yaml
+    gcloud app deploy $PROJECT_ID/app.yaml --stop-previous-version
 timeout: 1800s
 
 substitutions:
-  _MY_GCS_PATH: gs://tnfarm.appspot.com
+  _MY_GCS_PATH: gs://$PROJECT_ID.appspot.com
