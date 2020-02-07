@@ -8,7 +8,7 @@ steps:
   args: [-c, composer install]
 - name: gcr.io/cloud-builders/gsutil
   entrypoint: /bin/bash
-  args: [-c, gsutil ls ${_MY_GCS_PATH}/app.yaml .]
+  args: [-c, 'gsutil ls ${_MY_GCS_PATH}/app.yaml .']
 - name: gcr.io/cloud-builders/gsutil
   entrypoint: /bin/bash
   args: [-c, gsutil cp cloudbuild/app.yaml .]
