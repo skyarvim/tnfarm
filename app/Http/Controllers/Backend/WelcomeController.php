@@ -26,9 +26,7 @@ class WelcomeController extends Controller
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $fileName = time() . '_' . $file->getClientOriginalName();
-            $storage = new StorageClient([
-                'keyFilePath' => 'D:\Projects\backup\keys\GAE-Account-tnfarm-6a050ad27d2e.json'
-            ]);
+            $storage = new StorageClient();
             $bucket = $storage->bucket('tnfarm.appspot.com');
             $bucket->upload(
                 fopen($file, 'r'),
@@ -55,9 +53,7 @@ class WelcomeController extends Controller
         $welcome = Welcome::find($id);
         if ($request->hasFile('image')) {
             if ($welcome->image != 'default.jpg') {
-                $storage = new StorageClient([
-                    'keyFilePath' => 'D:\Projects\backup\keys\GAE-Account-tnfarm-6a050ad27d2e.json'
-                ]);
+                $storage = new StorageClient();
                 $bucket = $storage->bucket('tnfarm.appspot.com');
                 $object = $bucket->object('welcome/' . $welcome->image);
                 $object->delete();
@@ -65,9 +61,7 @@ class WelcomeController extends Controller
             }
             $file = $request->file('image');
             $fileName = time() . '_' . $file->getClientOriginalName();
-            $storage = new StorageClient([
-                'keyFilePath' => 'D:\Projects\backup\keys\GAE-Account-tnfarm-6a050ad27d2e.json'
-            ]);
+            $storage = new StorageClient();
             $bucket = $storage->bucket('tnfarm.appspot.com');
             $bucket->upload(
                 fopen($file, 'r'),
@@ -85,9 +79,7 @@ class WelcomeController extends Controller
     {
         $welcome = Welcome::find($id);
         if ($welcome->image != 'default.jpg') {
-            $storage = new StorageClient([
-                'keyFilePath' => 'D:\Projects\backup\keys\GAE-Account-tnfarm-6a050ad27d2e.json'
-            ]);
+            $storage = new StorageClient();
             $bucket = $storage->bucket('tnfarm.appspot.com');
             $object = $bucket->object('welcome/' . $welcome->image);
             $object->delete();
