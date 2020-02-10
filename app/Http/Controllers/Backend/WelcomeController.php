@@ -30,7 +30,7 @@ class WelcomeController extends Controller
             $bucket = $storage->bucket('tnfarm.appspot.com');
             $bucket->upload(
                 fopen($file, 'r'),
-                ['name'=> 'welcome/' . $fileName]
+                ['name'=> 'welcome/' . $fileName, 'predefinedAcl'=> 'publicRead']
             );
         }
         else {
@@ -65,7 +65,7 @@ class WelcomeController extends Controller
             $bucket = $storage->bucket('tnfarm.appspot.com');
             $bucket->upload(
                 fopen($file, 'r'),
-                ['name' => 'welcome/' . $fileName]
+                ['name' => 'welcome/' . $fileName, 'predefinedAcl'=> 'publicRead']
             );
             $welcome->image = $fileName;
         }

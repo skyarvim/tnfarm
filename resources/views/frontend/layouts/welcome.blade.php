@@ -15,7 +15,7 @@
 			@foreach($welcomes as $welcome)
 			<li class="mis-slide">
 				<figure>
-					<img src="{{ asset('uploads/welcome/' . $welcome->image) }}" alt=" " class="img-responsive" />
+					<img src="https://storage.googleapis.com/tnfarm.appspot.com/welcome/{{ $welcome->image) }}" alt=" " class="img-responsive" />
 					<figcaption>{{ $welcome->title }}</figcaption>
 				</figure>
 			</li>
