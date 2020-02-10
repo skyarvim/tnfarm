@@ -23,7 +23,7 @@
                     <tr>
                         <th class="align-middle" scope="row">{{ $welcome->id }}</th>
                         <td class="align-middle">{{ $welcome->title }}</td>
-                        <td class="align-middle"><img src="{{ asset('uploads/welcome/'. $welcome->image) }}" width="100px"></td>
+                        <td class="align-middle"><img src="gs://tnfarm.appspot.com/{{ $welcome->image }}" width="100px"></td>
                         <td class="align-middle">
                             <a href="{{ route('admin.welcome.edit', $welcome->id) }}" class="btn btn-primary">EDIT</a>
                             <form method="POST" action="{{ route('admin.welcome.destroy', $welcome->id) }}">
