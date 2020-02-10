@@ -20,7 +20,12 @@
                 <a href="#" class="list-group-item list-group-item-action bg-light">Banner</a>
                 <a href="#" class="list-group-item list-group-item-action bg-light">Banner-Bottom</a>
                 <a href="{{ route('admin.welcome.index') }}" class="list-group-item list-group-item-action bg-light">Welcome</a>
-                <a href="{{ route('logout') }}" class="list-group-item list-group-item-action bg-light">Logout</a>
+                <a href="{{ route('logout') }}" class="list-group-item list-group-item-action bg-light"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->

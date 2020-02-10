@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Welcome;
+use Google\Cloud\Storage\StorageClient;
 
 class WelcomeController extends Controller
 {
@@ -13,22 +14,26 @@ class WelcomeController extends Controller
         $welcomes = Welcome::orderBy('id')->get();
         return view('backend.welcome.index', compact('welcomes'));
     }
+
     public function create()
     {
         return view('backend.welcome.create');
     }
+
     public function store(Request $request)
     {
-        // 如果路徑不存在，就自動建立
-        if (!file_exists('uploads/welcome')) {
-            mkdir('uploads/welcome', 0755, true);
-        }
         $welcome = new Welcome;
         if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $path = public_path() . '\uploads\welcome\\';
             $fileName = time() . '_' . $file->getClientOriginalName();
-            $file->move($path, $fileName);
+            $storage = new StorageClient([
+                'keyFilePath' => 'D:\Projects\backup\keys\GAE-Account-tnfarm-6a050ad27d2e.json'
+            ]);
+            $bucket = $storage->bucket('tnfarm.appspot.com');
+            $bucket->upload(
+                fopen($file, 'r'),
+                ['name'=> 'welcome/' . $fileName]
+            );
         }
         else {
             $fileName = 'default.jpg';
@@ -38,26 +43,36 @@ class WelcomeController extends Controller
         $welcome->save();
         return redirect()->route('admin.welcome.index');
     }
+
     public function edit($id)
     {
         $welcome = Welcome::find($id);
         return view('backend.welcome.edit', compact('welcome'));
     }
+
     public function update(Request $request, $id)
     {
-        // 如果路徑不存在，就自動建立
-        if (!file_exists('uploads/welcome')) {
-            mkdir('uploads/welcome', 0755, true);
-        }
         $welcome = Welcome::find($id);
         if ($request->hasFile('image')) {
-            // 先刪除原本的圖片
-            if ($welcome->image != 'default.jpg')
-                @unlink('uploads/welcome/' . $welcome->image);
+            if ($welcome->image != 'default.jpg') {
+                $storage = new StorageClient([
+                    'keyFilePath' => 'D:\Projects\backup\keys\GAE-Account-tnfarm-6a050ad27d2e.json'
+                ]);
+                $bucket = $storage->bucket('tnfarm.appspot.com');
+                $object = $bucket->object('welcome/' . $welcome->image);
+                $object->delete();
+    
+            }
             $file = $request->file('image');
-            $path = public_path() . '\uploads\welcome\\';
             $fileName = time() . '_' . $file->getClientOriginalName();
-            $file->move($path, $fileName);
+            $storage = new StorageClient([
+                'keyFilePath' => 'D:\Projects\backup\keys\GAE-Account-tnfarm-6a050ad27d2e.json'
+            ]);
+            $bucket = $storage->bucket('tnfarm.appspot.com');
+            $bucket->upload(
+                fopen($file, 'r'),
+                ['name' => 'welcome/' . $fileName]
+            );
             $welcome->image = $fileName;
         }
         $welcome->title = $request->input('title');
@@ -65,11 +80,18 @@ class WelcomeController extends Controller
         $welcome->save();
         return redirect()->route('admin.welcome.index');
     }
+
     public function destroy($id)
     {
         $welcome = Welcome::find($id);
-        if ($welcome->image != 'default.jpg')
-            @unlink('uploads/welcome/' . $welcome->image);
+        if ($welcome->image != 'default.jpg') {
+            $storage = new StorageClient([
+                'keyFilePath' => 'D:\Projects\backup\keys\GAE-Account-tnfarm-6a050ad27d2e.json'
+            ]);
+            $bucket = $storage->bucket('tnfarm.appspot.com');
+            $object = $bucket->object('welcome/' . $welcome->image);
+            $object->delete();
+        }
         $welcome->delete();
         return redirect()->route('admin.welcome.index');
     }
