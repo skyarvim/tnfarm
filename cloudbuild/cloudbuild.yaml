@@ -13,12 +13,7 @@ steps:
   - |
     gsutil cp gs://$PROJECT_ID.appspot.com/app.yaml $PROJECT_ID/
     gsutil cp gs://$PROJECT_ID.appspot.com/.env.$PROJECT_ID $PROJECT_ID/.env
-- name: gcr.io/cloud-builders/wget
-  entrypoint: /bin/bash
-  args:
-  - -c
-  - |
-    wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
+    gsutil cp gs://$PROJECT_ID.appspot.com/cloud_sql_proxy.linux.amd64 cloud_sql_proxy
     chmod +x cloud_sql_proxy
     ./cloud_sql_proxy -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 &
 - name: gcr.io/$PROJECT_ID/php
