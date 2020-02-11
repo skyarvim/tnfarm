@@ -1,7 +1,4 @@
 steps:
-- name: gcr.io/cloud-builders/gsutil
-  entrypoint: /bin/bash
-  args: [-c, gsutil cp gs://$PROJECT_ID.appspot.com/app.yaml $PROJECT_ID/]
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: /bin/bash
   args: [-c, gcloud source repos clone github_skyarvim_$PROJECT_ID $PROJECT_ID/]
@@ -9,6 +6,12 @@ steps:
   entrypoint: /bin/bash
   dir: $PROJECT_ID/
   args: [-c, composer install]
+- name: gcr.io/cloud-builders/gsutil
+  entrypoint: /bin/bash
+  args: [-c, gsutil cp gs://$PROJECT_ID.appspot.com/app.yaml $PROJECT_ID/]
+- name: gcr.io/cloud-builders/gsutil
+  entrypoint: /bin/bash
+  args: [-c, gsutil cp gs://$PROJECT_ID.appspot.com/.env.$PROJECT_ID $PROJECT_ID/.env]
 - name: gcr.io/cloud-builders/wget
   entrypoint: /bin/bash
   args:
