@@ -11,17 +11,18 @@ steps:
   args: [-c, composer install]
 - name: gcr.io/cloud-builders/wget
   entrypoint: /bin/bash
+  args: [-c, wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy]
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: /bin/bash
   args:
   - -c
   - |
-    wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
-    ps -aux | grep sql
     chmod +x cloud_sql_proxy
     ./cloud_sql_proxy -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 &
 - name: gcr.io/$PROJECT_ID/php
   entrypoint: /bin/bash
   dir: $PROJECT_ID/
-  args: 
+  args:
   - -c
   - |
     php artisan key:generate --show --no-ansi > my_php_key
