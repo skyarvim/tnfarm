@@ -12,7 +12,11 @@ steps:
 - name: gcr.io/$PROJECT_ID/php
   entrypoint: /bin/bash
   dir: $PROJECT_ID/
-  args: [-c, php artisan key:generate --show --no-ansi > my_php_key]
+  args:
+  - -c
+  - |
+    php artisan key:generate --show --no-ansi > my_php_key
+    php artisan migrate refresh
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: /bin/bash
   args:
