@@ -8,10 +8,11 @@ steps:
   args: [-c, composer install]
 - name: gcr.io/cloud-builders/gsutil
   entrypoint: /bin/bash
-  args: [-c, gsutil cp gs://$PROJECT_ID.appspot.com/app.yaml $PROJECT_ID/]
-- name: gcr.io/cloud-builders/gsutil
-  entrypoint: /bin/bash
-  args: [-c, gsutil cp gs://$PROJECT_ID.appspot.com/.env.$PROJECT_ID $PROJECT_ID/.env]
+  args: 
+  - -c
+  - |
+    gsutil cp gs://$PROJECT_ID.appspot.com/app.yaml $PROJECT_ID/
+    gsutil cp gs://$PROJECT_ID.appspot.com/.env.$PROJECT_ID $PROJECT_ID/.env
 - name: gcr.io/cloud-builders/wget
   entrypoint: /bin/bash
   args:
@@ -27,6 +28,7 @@ steps:
   - -c
   - |
     php artisan key:generate --show --no-ansi > my_php_key
+    php artisan session:table
     php artisan migrate:refresh --force
 #- name: gcr.io/$PROJECT_ID/php
 #  entrypoint: /bin/bash
