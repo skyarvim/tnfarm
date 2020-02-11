@@ -12,7 +12,7 @@ steps:
 - name: gcr.io/$PROJECT_ID/php
   entrypoint: /bin/bash
   dir: $PROJECT_ID/
-  args: [-c, php artisan migrate refresh]
+  args: [-c, php artisan session:table]
 - name: gcr.io/$PROJECT_ID/php
   entrypoint: /bin/bash
   dir: $PROJECT_ID/
