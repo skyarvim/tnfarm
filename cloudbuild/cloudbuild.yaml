@@ -9,9 +9,17 @@ steps:
   entrypoint: /bin/bash
   dir: $PROJECT_ID/
   args: [-c, composer install]
-- name: gcr.io/cloudsql-docker/gce-proxy:1.15
+- name: gcr.io/cloud-builders/gcloud
   entrypoint: /bin/bash
-  args: [-c, cloud_sql_proxy -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306]
+  args: 
+  - -c
+  - |
+    wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
+    chmod +x cloud_sql_proxy
+    cloud_sql_proxy -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306
+- name: gcr.io/cloud-builders/gsutil
+  entrypoint: /bin/bash
+  args: [-c, gsutil cp cloud_sql_proxy gs://$PROJECT_ID.appspot.com/]
 - name: gcr.io/$PROJECT_ID/php
   entrypoint: /bin/bash
   dir: $PROJECT_ID/
