@@ -1,9 +1,6 @@
 steps:
 - name: gcr.io/cloud-builders/gcloud
   args: [source, repos, clone, github_skyarvim_$PROJECT_ID, $PROJECT_ID/]
-- name: gcr.io/$PROJECT_ID/composer
-  dir: $PROJECT_ID/
-  args: [install]
 - name: gcr.io/cloud-builders/gsutil
   entrypoint: /bin/bash
   args:
@@ -11,37 +8,26 @@ steps:
   - |
     gsutil cp gs://$PROJECT_ID.appspot.com/app.yaml $PROJECT_ID/
     gsutil cp gs://$PROJECT_ID.appspot.com/.env.$PROJECT_ID $PROJECT_ID/.env
-#- name: gcr.io/cloud-builders/docker
-#  args: [run, -d, -p, 127.0.0.1:3306:3306, gcr.io/cloudsql-docker/gce-proxy, /cloud_sql_proxy, -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:0.0.0.0:3306]
-#- name: gcr.io/cloudsql-docker/gce-proxy
-#  args: [/cloud_sql_proxy, '-instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 > cloudsql.log 2>&1 &']
-#- name: gcr.io/cloud-builders/wget
-#  entrypoint: /bin/bash
-#  args:
-#  - -c
-#  - |
-#    wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
-#    chmod +x cloud_sql_proxy
-#    ./cloud_sql_proxy -dir=/cloudsql -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 &
-- id: ttttt
-  name: gcr.io/cloud-builders/wget
+- name: gcr.io/cloud-builders/wget
   entrypoint: /bin/bash
   args:
   - -c
   - |
-    wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
+    wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O $PROJECT_ID/cloud_sql_proxy
     chmod +x cloud_sql_proxy
-    ./cloud_sql_proxy -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 &
-    sleep 3
+- name: gcr.io/$PROJECT_ID/composer
+  dir: $PROJECT_ID/
+  args: [install]
 - name: gcr.io/$PROJECT_ID/php
   entrypoint: /bin/bash
   dir: $PROJECT_ID/
   args:
   - -c
   - |
+    ./cloud_sql_proxy -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 &
+    sleep 5
     php artisan migrate
-    php artisan key:generate --show --no-ansi > my_php_key
-#  waitFor: [ttttt]
+#    php artisan key:generate --show --no-ansi > my_php_key
 #    php artisan session:table
 #- name: gcr.io/$PROJECT_ID/php
 #  entrypoint: /bin/bash
