@@ -1,6 +1,9 @@
 steps:
 - name: gcr.io/cloud-builders/gcloud
-  args: [source, repos, clone, github_skyarvim_$PROJECT_ID, $PROJECT_ID/]
+  args:
+  - -c
+  - |
+    gcloud source repos clone github_skyarvim_$PROJECT_ID $PROJECT_ID/]
 - name: gcr.io/cloud-builders/gsutil
   entrypoint: /bin/bash
   args:
@@ -9,15 +12,19 @@ steps:
     gsutil cp gs://$PROJECT_ID.appspot.com/app.yaml $PROJECT_ID/
     gsutil cp gs://$PROJECT_ID.appspot.com/.env.$PROJECT_ID $PROJECT_ID/.env
 - name: gcr.io/cloud-builders/wget
+  dir: $PROJECT_ID/
   entrypoint: /bin/bash
   args:
   - -c
   - |
-    wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O $PROJECT_ID/cloud_sql_proxy
+    wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
     chmod +x cloud_sql_proxy
 - name: gcr.io/$PROJECT_ID/composer
   dir: $PROJECT_ID/
-  args: [install]
+  args:
+  - -c
+  - |
+    composer install
 - name: gcr.io/$PROJECT_ID/php
   entrypoint: /bin/bash
   dir: $PROJECT_ID/
