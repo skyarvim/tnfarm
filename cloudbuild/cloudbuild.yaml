@@ -1,10 +1,9 @@
 steps:
-#- name: gcr.io/cloud-builders/gcloud
-#  entrypoint: /bin/bash
-#  args: [-c, gcloud source repos clone github_skyarvim_$PROJECT_ID $PROJECT_ID/]
-#- name: gcr.io/cloud-builders/docker
-#  dir: $PROJECT_ID/
-#  args: [run, composer, install]
+- name: gcr.io/cloud-builders/gcloud
+  args: [source, repos, clone, github_skyarvim_$PROJECT_ID, $PROJECT_ID/]
+- name: gcr.io/cloud-builders/docker
+  dir: $PROJECT_ID/
+  args: [run, composer, install]
 #- name: gcr.io/$PROJECT_ID/composer
 #  entrypoint: /bin/bash
 #  dir: $PROJECT_ID/
