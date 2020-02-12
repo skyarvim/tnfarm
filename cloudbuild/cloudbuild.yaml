@@ -28,17 +28,17 @@ steps:
     ./cloud_sql_proxy -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 &
     sleep 5
     php artisan migrate
-#    php artisan key:generate --show --no-ansi > my_php_key
+    php artisan key:generate --show --no-ansi > my_php_key
 #    php artisan session:table
 #- name: gcr.io/$PROJECT_ID/php
 #  entrypoint: /bin/bash
 #  dir: $PROJECT_ID/
 #  args: [-c, php artisan key:generate --show --no-ansi > my_php_key]
-#- name: gcr.io/cloud-builders/gcloud
-#  entrypoint: /bin/bash
-#  args:
-#  - -c
-#  - |
-#    sed -i "s#MY_APP_KEY#$(cat $PROJECT_ID/my_php_key)#" $PROJECT_ID/app.yaml
-#    gcloud app deploy $PROJECT_ID/app.yaml --stop-previous-version
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: /bin/bash
+  args:
+  - -c
+  - |
+    sed -i "s#MY_APP_KEY#$(cat $PROJECT_ID/my_php_key)#" $PROJECT_ID/app.yaml
+    gcloud app deploy $PROJECT_ID/app.yaml --stop-previous-version
 timeout: 1800s
