@@ -15,14 +15,18 @@ steps:
 #    gsutil cp gs://$PROJECT_ID.appspot.com/.env.$PROJECT_ID $PROJECT_ID/.env
 #- name: gcr.io/cloudsql-docker/gce-proxy
 #  args: [/cloud_sql_proxy, '-instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 > cloudsql.log 2>&1 &']
-- name: gcr.io/cloud-builders/wget
+- name: gcr.io/cloud-builders/docker
   entrypoint: /bin/bash
   args:
   - -c
   - |
-    wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
-    chmod +x cloud_sql_proxy
-    ./cloud_sql_proxy -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 $$&
+    docker images
+- name: gcr.io/cloud-builders/docker
+  entrypoint: /bin/bash
+  args:
+  - -c
+  - |
+    docker run -d gcr.io/cloudsql-docker/gce-proxy /cloud_sql_proxy -instances=tnfarm:asia-east2:tnfarm=tcp:3306
 #- name: gcr.io/$PROJECT_ID/php
 #  entrypoint: /bin/bash
 #  dir: $PROJECT_ID/
