@@ -24,7 +24,7 @@ steps:
     chmod +x cloud_sql_proxy
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: /bin/bash
-  args: [-c, "./cloud_sql_proxy -dir=/cloudsql -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 &"]
+  args: [-c, ./cloud_sql_proxy -dir=/cloudsql -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306]
 - name: gcr.io/$PROJECT_ID/php
   entrypoint: /bin/bash
   dir: $PROJECT_ID/
