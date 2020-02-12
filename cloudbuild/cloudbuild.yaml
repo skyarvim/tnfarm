@@ -23,10 +23,7 @@ steps:
 - name: gcr.io/$PROJECT_ID/composer
   entrypoint: /bin/bash
   dir: $PROJECT_ID/
-  args:
-  - -c
-  - |
-    composer install
+  args: [-c, composer install]
 - name: gcr.io/$PROJECT_ID/php
   entrypoint: /bin/bash
   dir: $PROJECT_ID/
