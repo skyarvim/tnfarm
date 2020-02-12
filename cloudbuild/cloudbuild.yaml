@@ -14,7 +14,7 @@ steps:
     gsutil cp gs://$PROJECT_ID.appspot.com/app.yaml $PROJECT_ID/
     gsutil cp gs://$PROJECT_ID.appspot.com/.env.$PROJECT_ID $PROJECT_ID/.env
 - name: gcr.io/cloudsql-docker/gce-proxy
-  args: [/cloud_sql_proxy, -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 &]
+  args: [/cloud_sql_proxy, '-instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 &']
 - name: gcr.io/$PROJECT_ID/php
   entrypoint: /bin/bash
   dir: $PROJECT_ID/
