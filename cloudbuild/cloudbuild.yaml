@@ -19,7 +19,7 @@ steps:
   args:
   - -c
   - |
-    -i
+    php -i
 #    php artisan key:generate --show --no-ansi > my_php_key
 #    php artisan migrate
 #    php artisan session:table
