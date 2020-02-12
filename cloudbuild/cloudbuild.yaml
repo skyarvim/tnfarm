@@ -1,5 +1,6 @@
 steps:
 - name: gcr.io/cloud-builders/gcloud
+  entrypoint: /bin/bash
   args:
   - -c
   - |
@@ -12,14 +13,15 @@ steps:
     gsutil cp gs://$PROJECT_ID.appspot.com/app.yaml $PROJECT_ID/
     gsutil cp gs://$PROJECT_ID.appspot.com/.env.$PROJECT_ID $PROJECT_ID/.env
 - name: gcr.io/cloud-builders/wget
-  dir: $PROJECT_ID/
   entrypoint: /bin/bash
+  dir: $PROJECT_ID/
   args:
   - -c
   - |
     wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
     chmod +x cloud_sql_proxy
 - name: gcr.io/$PROJECT_ID/composer
+  entrypoint: /bin/bash
   dir: $PROJECT_ID/
   args:
   - -c
