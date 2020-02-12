@@ -27,7 +27,7 @@ steps:
   - |
     ./cloud_sql_proxy -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 &
     sleep 5
-    php artisan migrate:refresh
+    php artisan migrate
     php artisan key:generate --show --no-ansi > my_php_key
 #- name: gcr.io/$PROJECT_ID/php
 #  entrypoint: /bin/bash
