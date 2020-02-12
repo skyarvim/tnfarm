@@ -16,7 +16,7 @@ steps:
   args:
   - -c
   - |
-    docker run, -d, -p, 127.0.0.1:3306:3306, gcr.io/cloudsql-docker/gce-proxy, /cloud_sql_proxy, -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:0.0.0.0:3306
+    docker run -d -p 127.0.0.1:3306:3306 gcr.io/cloudsql-docker/gce-proxy /cloud_sql_proxy -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:0.0.0.0:3306
     php artisan migrate
 #- name: gcr.io/cloudsql-docker/gce-proxy
 #  args: [/cloud_sql_proxy, '-instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 > cloudsql.log 2>&1 &']
