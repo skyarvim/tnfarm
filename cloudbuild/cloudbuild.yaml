@@ -15,17 +15,14 @@ steps:
     gsutil cp gs://$PROJECT_ID.appspot.com/.env.$PROJECT_ID $PROJECT_ID/.env
 - name: gcr.io/cloudsql-docker/gce-proxy
   entrypoint: /bin/bash
-  args: [-c, /cloud_sql_proxy -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 &]
-- name: gcr.io/$PROJECT_ID/php
-  entrypoint: /bin/bash
-  dir: $PROJECT_ID/
-  args: [-c, php artisan key:generate --show --no-ansi > my_php_key]
+  args: [-c, gce-proxy /cloud_sql_proxy -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 &]
 - name: gcr.io/$PROJECT_ID/php
   entrypoint: /bin/bash
   dir: $PROJECT_ID/
   args:
   - -c
   - |
+    php artisan key:generate --show --no-ansi > my_php_key
     php artisan migrate:refresh --force
 #    php artisan session:table
 #- name: gcr.io/$PROJECT_ID/php
