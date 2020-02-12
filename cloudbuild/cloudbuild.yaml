@@ -38,6 +38,7 @@ steps:
   - |
     chmod +x cloud_sql_proxy
     ./cloud_sql_proxy -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 ''&
+    sleep 10
     php artisan migrate
 #    php artisan key:generate --show --no-ansi > my_php_key
 #  waitFor: [ttttt]
