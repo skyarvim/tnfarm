@@ -29,18 +29,18 @@ steps:
   args:
   - -c
   - |
-    wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O $PROJECT_ID/cloud_sql_proxy
+    wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
+    chmod +x cloud_sql_proxy
+    ./cloud_sql_proxy -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 &
+    sleep 3
 - name: gcr.io/$PROJECT_ID/php
   entrypoint: /bin/bash
   dir: $PROJECT_ID/
   args:
   - -c
   - |
-    chmod +x cloud_sql_proxy
-    ./cloud_sql_proxy -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 &
-    sleep 3
     php artisan migrate
-#    php artisan key:generate --show --no-ansi > my_php_key
+    php artisan key:generate --show --no-ansi > my_php_key
 #  waitFor: [ttttt]
 #    php artisan session:table
 #- name: gcr.io/$PROJECT_ID/php
