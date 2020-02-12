@@ -1,38 +1,26 @@
 steps:
-#- name: gcr.io/cloud-builders/gcloud
-#  args: [source, repos, clone, github_skyarvim_$PROJECT_ID, $PROJECT_ID/]
-#- name: gcr.io/$PROJECT_ID/composer
-#  dir: $PROJECT_ID/
-#  args: [install]
-#- name: gcr.io/cloud-builders/gsutil
-#  entrypoint: /bin/bash
-#  args:
-#  - -c
-#  - |
-#    gsutil cp gs://$PROJECT_ID.appspot.com/app.yaml $PROJECT_ID/
-#    gsutil cp gs://$PROJECT_ID.appspot.com/.env.$PROJECT_ID $PROJECT_ID/.env
 - name: gcr.io/cloud-builders/gcloud
+  args: [source, repos, clone, github_skyarvim_$PROJECT_ID, $PROJECT_ID/]
+- name: gcr.io/$PROJECT_ID/composer
+  dir: $PROJECT_ID/
+  args: [install]
+- name: gcr.io/cloud-builders/gsutil
   entrypoint: /bin/bash
   args:
   - -c
   - |
-    ps -aux
+    gsutil cp gs://$PROJECT_ID.appspot.com/app.yaml $PROJECT_ID/
+    gsutil cp gs://$PROJECT_ID.appspot.com/.env.$PROJECT_ID $PROJECT_ID/.env
 - name: gcr.io/cloud-builders/docker
   args: [run, -d, -p, 127.0.0.1:3306:3306, gcr.io/cloudsql-docker/gce-proxy, /cloud_sql_proxy, -instances=tnfarm:asia-east2:tnfarm=tcp:0.0.0.0:3306]
-- name: gcr.io/cloud-builders/gcloud
+- name: gcr.io/$PROJECT_ID/php
   entrypoint: /bin/bash
+  dir: $PROJECT_ID/
   args:
   - -c
   - |
-    ps -aux
-#- name: gcr.io/$PROJECT_ID/php
-#  entrypoint: /bin/bash
-#  dir: $PROJECT_ID/
-#  args:
-#  - -c
-#  - |
-#    php artisan key:generate --show --no-ansi > my_php_key
-#    php artisan migrate:refresh
+    php artisan key:generate --show --no-ansi > my_php_key
+    php artisan migrate
 #    php artisan session:table
 #- name: gcr.io/$PROJECT_ID/php
 #  entrypoint: /bin/bash
