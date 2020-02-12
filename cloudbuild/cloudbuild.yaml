@@ -37,7 +37,7 @@ steps:
   - |
     php artisan key:generate --show --no-ansi > my_php_key
     chmod +x cloud_sql_proxy
-    ./cloud_sql_proxy -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 '&'
+    ./cloud_sql_proxy -instances=$PROJECT_ID:asia-east2:$PROJECT_ID=tcp:3306 ''&
     php artisan migrate
 #    php artisan session:table
 #- name: gcr.io/$PROJECT_ID/php
