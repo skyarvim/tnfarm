@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'Frontend\HomeController@index')->name('home');
-Route::get('/about', 'Frontend\AboutController@index')->name('about')->middleware('isadmin');
+Route::get('/about', 'Frontend\AboutController@index')->name('about');
 
 Auth::routes(['verify' => true]);
 
