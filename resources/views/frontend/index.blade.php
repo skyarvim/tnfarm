@@ -1,4 +1,4 @@
-@extends('frontend.layouts.master', ['bannerinfo'=> true, 'bannerbottom'=> true])
+@extends('frontend.layouts.master', ['bannerinfo' => true, 'bannerbottom' => true])
 
 @section('menu_home', 'active')
 
