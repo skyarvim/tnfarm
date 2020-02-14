@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('frontend.layouts.master', ['bannerinfo' => false, 'bannerbottom' => false])
 
 @section('content')
+@include('frontend.layouts.breadcrumbs', ['icon' => 'fa fa-sign-in', 'title' => "Login", 'description' => "Login"])
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

@@ -17,6 +17,7 @@
         <div class="bg-light border-right" id="sidebar-wrapper">
             <div class="sidebar-heading">Control Pannel</div>
             <div class="list-group list-group-flush">
+                <a href="{{ route('admin.user.index') }}" class="list-group-item list-group-item-action bg-light">User</a>
                 <a href="#" class="list-group-item list-group-item-action bg-light">Banner</a>
                 <a href="#" class="list-group-item list-group-item-action bg-light">Banner-Bottom</a>
                 <a href="{{ route('admin.welcome.index') }}" class="list-group-item list-group-item-action bg-light">Welcome</a>

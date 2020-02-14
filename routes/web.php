@@ -12,10 +12,12 @@
 */
 
 Route::get('/', 'Frontend\HomeController@index')->name('home');
+#Route::get('/about', 'Frontend\AboutController@index')->name('about')->middleware('verified');
 
 Auth::routes(['verify' => true]);
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
-    Route::get('/', 'Backend\WebsiteController@index')->name('website')->middleware('isadmin');
-    Route::resource('/welcome', 'Backend\WelcomeController', ['except' => ['show']])->middleware('isadmin');
+    Route::resource('/', 'Backend\WebsiteController', ['only' => 'index'])->middleware('isadmin');
+    Route::resource('/user', 'Backend\UserController', ['only' => 'index'])->middleware('isadmin');
+    Route::resource('/welcome', 'Backend\WelcomeController', ['except' => 'show'])->middleware('isadmin');
 });

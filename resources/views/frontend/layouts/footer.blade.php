@@ -24,7 +24,6 @@
 				<h3>網站導覽 Navigation</h3>
 				<ul class="w3layouts_footer_nav">
 					<li><a href="{{ route('home') }}"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>首頁 Home</a></li>
-					<li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>網站管理員 Webadmin</a></li>
 {{--
 					<li><a href="{{ route('icons') }}"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Web Icons</a></li>
 					<li><a href="{{ route('typography') }}"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Typography</a></li>
