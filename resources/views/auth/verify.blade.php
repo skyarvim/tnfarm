@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master', ['bannerinfo' => false, 'bannerbottom' => false])
 
 @section('content')
-@include('frontend.layouts.breadcrumbs', ['icon' => 'fa fa-shield', 'title' => '驗證您的電子郵件地址 Verify Your Email Address', 'type' => ''])
+@include('frontend.layouts.breadcrumbs', ['icon' => 'fa fa-shield', 'title' => '驗證您的電子郵件地址 Verify Your Email Address', 'home' => false, 'type' => ''])
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" defer></script>
 <!-- Styles -->

@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master', ['bannerinfo' => false, 'bannerbottom' => false])
 
 @section('content')
-@include('frontend.layouts.breadcrumbs', ['icon' => 'fa fa-registered', 'title' => '註冊 Register', 'type' => 'Register'])
+@include('frontend.layouts.breadcrumbs', ['icon' => 'fa fa-registered', 'title' => '註冊 Register', 'home' => true, 'type' => 'Register'])
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" defer></script>
 <!-- Styles -->

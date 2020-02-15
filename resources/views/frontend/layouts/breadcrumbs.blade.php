@@ -5,6 +5,9 @@
             <div class="col-auto">
                 <div class="w3layouts_breadcrumbs_left">
                     <ul>
+                        @if( $home == true )
+                        <li><i class="fa fa-home" aria-hidden="true"></i><a href="{{ route('home') }}">首頁 Home</a><span>/</span></li>
+                        @endif
                         <li><i class="{{ $icon }}" aria-hidden="true"></i>{{ $title }}</li>
                     </ul>
                 </div>

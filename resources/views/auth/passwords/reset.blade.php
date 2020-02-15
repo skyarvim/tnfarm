@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master', ['bannerinfo' => false, 'bannerbottom' => false])
 
 @section('content')
-@include('frontend.layouts.breadcrumbs', ['icon' => 'fa fa-key', 'title' => '重設密碼 Reset Password', 'type' => ''])
+@include('frontend.layouts.breadcrumbs', ['icon' => 'fa fa-key', 'title' => '重設密碼 Reset Password', 'home' => false, 'type' => ''])
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" defer></script>
 <!-- Styles -->
