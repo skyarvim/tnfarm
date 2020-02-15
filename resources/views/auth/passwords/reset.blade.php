@@ -1,11 +1,17 @@
-@extends('layouts.app')
+@extends('frontend.layouts.master', ['bannerinfo' => false, 'bannerbottom' => false])
 
 @section('content')
+@include('frontend.layouts.breadcrumbs', ['icon' => 'fa fa-key', 'title' => '重設密碼 Reset Password', 'type' => ''])
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}" defer></script>
+<!-- Styles -->
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+                <div class="card-header">{{ __('請輸入電子郵件地址、密碼與確認密碼後按下重設密碼。') }}</div>
+                <div class="card-header">{{ __('Please enter email address, password and confirm password, then press reset password.') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}">
@@ -14,7 +20,7 @@
                         <input type="hidden" name="token" value="{{ $token }}">
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('電子郵件地址 E-Mail Address') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
@@ -28,7 +34,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('密碼 Password') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -42,7 +48,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('確認密碼 Confirm Password') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
@@ -52,11 +58,14 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Reset Password') }}
+                                    {{ __('重設密碼 Reset Password') }}
                                 </button>
                             </div>
                         </div>
                     </form>
+                </div>
+
+                <div class="card-footer">
                 </div>
             </div>
         </div>

@@ -1,20 +1,24 @@
-@extends('layouts.app')
+@extends('frontend.layouts.master', ['bannerinfo' => false, 'bannerbottom' => false])
 
 @section('content')
+@include('frontend.layouts.breadcrumbs', ['icon' => 'fa fa-key', 'title' => '確認密碼 Confirm Password', 'type' => ''])
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}" defer></script>
+<!-- Styles -->
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Confirm Password') }}</div>
+                <div class="card-header">{{ __('請先確認密碼，然後再繼續。') }}</div>
+                <div class="card-header">{{ __('Please confirm your password before continuing.') }}</div>
 
                 <div class="card-body">
-                    {{ __('Please confirm your password before continuing.') }}
-
                     <form method="POST" action="{{ route('password.confirm') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('密碼 Password') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -30,17 +34,20 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Confirm Password') }}
+                                    {{ __('確認密碼 Confirm Password') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('忘記密碼？ Forgot Your Password?') }}
                                     </a>
                                 @endif
                             </div>
                         </div>
                     </form>
+                </div>
+
+                <div class="card-footer">
                 </div>
             </div>
         </div>

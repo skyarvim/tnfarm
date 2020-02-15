@@ -51,7 +51,9 @@
 @if( $bannerinfo == true )
 		<div class="w3_banner_info">
 			<div class="w3_banner_info_grid">
-				<h3 class="test">我們致力於推廣台南的農作物與特產品，希望能讓大家品嘗到來自南部的香甜美味。</h3>
+				<h3 class="slogon-tw">我們致力於推廣台南的農作物與特產品，希望能讓大家品嘗到來自南部的香甜美味。</h3>
+				<h3 class="slogon-en">We are committed to promoting the crops and special products of Tainan, hoping that everyone can enjoy the sweet and delicious taste from the south.</h3>
+				</h3>
 {{--
 				<p>Aenean congue vitae mauris sed tristique. Mauris quis nulla at sapien blandit 
 					sollicitudin. Nunc tortor lorem, viverra sed diam ut, blandit efficitur leo.</p>
@@ -103,9 +105,14 @@
 <script type="text/javascript" src="{{ asset('frontend/js/jquery.textFx.js') }}"></script> 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('.test').textFx({
+		$('.slogon-tw').textFx({
 			type: 'fadeIn',
 			iChar: 100,
+			iAnim: 2000
+		});
+		$('.slogon-en').textFx({
+			type: 'fadeIn',
+			iChar: 25,
 			iAnim: 2000
 		});
 	});
