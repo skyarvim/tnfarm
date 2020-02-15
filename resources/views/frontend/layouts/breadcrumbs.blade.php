@@ -1,15 +1,15 @@
 <!-- breadcrumbs -->
 <div class="breadcrumbs">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-4">
+        <div class="row">
+            <div class="col-auto">
                 <div class="w3layouts_breadcrumbs_left">
                     <ul>
                         <li><i class="{{ $icon }}" aria-hidden="true"></i>{{ $title }}</li>
                     </ul>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-auto ml-auto">
                 <div class="w3layouts_breadcrumbs_right">
                     <ul>
                         @guest
