@@ -12,11 +12,15 @@
         <div class="w3layouts_breadcrumbs_right">
             <ul>
                 @guest
-                @if( $type == 'Login' )
+                @if( $description != 'Login' && $description != 'Register' )
+                {{ $description }}
+                @else
+                @if( $description == 'Login' )
                 <li><i class="fa fa-registered" aria-hidden="true"></i><a href="{{ route('register') }}">註冊 Register</a></li>
                 @endif
-                @if( $type == 'Register' )
+                @if( $description == 'Register' )
                 <li><i class="fa fa-sign-in" aria-hidden="true"></i><a href="{{ route('login') }}">登入 Login</a></li>
+                @endif
                 @endif
                 @endguest
             </ul>
