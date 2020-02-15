@@ -10,8 +10,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <h5 class="card-header text-center">{{ __('請輸入電子郵件地址與密碼登入，若您尚未註冊請點選右上方註冊按鈕。') }}</h5>
-                <h5 class="card-header text-center">{{ __('Please enter your email address and password to log in. If you haven\'t registered yet, please click the register button on the top right.') }}</h5>
+                <h6 class="card-header text-center">{{ __('請輸入電子郵件地址與密碼登入，若您尚未註冊請點選右上方註冊按鈕。') }}</h6>
+                <h6 class="card-header text-center">{{ __('Please enter your email address and password to log in. If you haven\'t registered yet, please click the register button on the top right.') }}</h6>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

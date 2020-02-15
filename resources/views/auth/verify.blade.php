@@ -10,8 +10,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <h5 class="card-header">{{ __('在繼續之前，請檢查您的電子郵件以獲取驗證連結。') }}</h5>
-                <h5 class="card-header">{{ __('Before proceeding, please check your email for a verification link.') }}</h5>
+                <h6 class="card-header">{{ __('在繼續之前，請檢查您的電子郵件以獲取驗證連結。') }}</h6>
+                <h6 class="card-header">{{ __('Before proceeding, please check your email for a verification link.') }}</h6>
 
                 <div class="card-body">
                     @if (session('resent'))

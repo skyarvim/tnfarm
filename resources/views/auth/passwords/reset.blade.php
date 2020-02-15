@@ -10,8 +10,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('請輸入電子郵件地址、密碼與確認密碼後按下重設密碼。') }}</div>
-                <div class="card-header">{{ __('Please enter email address, password and confirm password, then press reset password.') }}</div>
+                <h6 class="card-header">{{ __('請輸入電子郵件地址、密碼與確認密碼後按下重設密碼。') }}</h6>
+                <h6 class="card-header">{{ __('Please enter email address, password and confirm password, then press reset password.') }}</h6>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}">

@@ -10,8 +10,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('請輸入電子郵件地址後送出密碼重置連結。') }}</div>
-                <div class="card-header">{{ __('Please enter your email address and send password reset link.') }}</div>
+                <h6 class="card-header">{{ __('請輸入電子郵件地址後送出密碼重置連結。') }}</h6>
+                <h6 class="card-header">{{ __('Please enter your email address and send password reset link.') }}</h6>
 
                 <div class="card-body">
                     @if (session('status'))
