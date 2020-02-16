@@ -10,20 +10,20 @@
             </ul>
         </div>
         <div class="w3layouts_breadcrumbs_right">
+            @guest
+            @if( $description != 'Login' && $description != 'Register' )
+            <h2>{{ $description }}</h2>
+            @else
             <ul>
-                @guest
-                @if( $description != 'Login' && $description != 'Register' )
-                {{ $description }}
-                @else
-                @if( $description == 'Login' )
+            @if( $description == 'Login' )
                 <li><i class="fa fa-registered" aria-hidden="true"></i><a href="{{ route('register') }}">註冊 Register</a></li>
-                @endif
-                @if( $description == 'Register' )
+            @endif
+            @if( $description == 'Register' )
                 <li><i class="fa fa-sign-in" aria-hidden="true"></i><a href="{{ route('login') }}">登入 Login</a></li>
-                @endif
-                @endif
-                @endguest
+            @endif
             </ul>
+            @endif
+            @endguest
         </div>
     </div>
     <div class="clearfix"> </div>

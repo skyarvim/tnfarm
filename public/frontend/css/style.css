@@ -1014,11 +1014,11 @@ figure.agileits_effect_moses:hover img {
 .w3layouts_breadcrumbs_right{
 	float:right;
 }
+--*/
 .w3layouts_breadcrumbs_right h2{
 	font-size:2em;
 	color:#212121;
 }
---*/
 .w3_agile_about_grid_left h3{
 	font-size:1.4em;
 	color:#212121;
@@ -2049,16 +2049,14 @@ h2.typoh2{
 	.banner1 {
 		min-height: 220px;
 	}
-/*--
-	.w3layouts_breadcrumbs_right h2 {
-		font-size: 1.7em;
-	}
---*/
 	.w3layouts_breadcrumbs_left {
 		margin-top: .2em;
 	}
 	.w3layouts_breadcrumbs_right {
 		margin-top: .2em;
+	}
+	.w3layouts_breadcrumbs_right h2 {
+		font-size: 1.7em;
 	}
 	.w3_agile_about_grid_right {
 		padding: 0 2em 0 0;
@@ -2545,16 +2543,14 @@ h2.typoh2{
 	.agileits_w3layouts_news_grid {
 		padding: 1.5em 0.6em;
 	}
-/*--
-	.w3layouts_breadcrumbs_right h2 {
-		font-size: 1.5em;
-	}
---*/
 	.w3layouts_breadcrumbs_left {
 		margin-top: .1em;
 	}
 	.w3layouts_breadcrumbs_right {
 		margin-top: .1em;
+	}
+	.w3layouts_breadcrumbs_right h2 {
+		font-size: 1.5em;
 	}
 	.w3_agile_about_grid_left {
 		padding: 0;
