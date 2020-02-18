@@ -18,9 +18,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <meta property="og:locale" content="zh_TW" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="台南農場 Tainan Farm" />
-<meta property="og:description" content="數位轉型如何做？臺灣傳統產業有哪些成功案例？"/>
+<meta property="og:description" content="我們致力於推廣台南的農作物與特產品，希望能讓大家品嘗到來自南部的香甜美味。We are committed to promoting the crops and special products of Tainan, hoping that everyone can enjoy the sweet and delicious taste from the south."/>
 <meta property="og:image" content="https://storage.cloud.google.com/tnfarm.appspot.com/banner1.jpg?hl=zh-tw" />
-<meta property="og:image:alt" content="我們致力於推廣台南的農作物與特產品，希望能讓大家品嘗到來自南部的香甜美味。We are committed to promoting the crops and special products of Tainan, hoping that everyone can enjoy the sweet and delicious taste from the south." />
+<meta property="og:image:alt" content="芒果繁花" />
 <meta property="og:image:type" content="image/jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
