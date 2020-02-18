@@ -9,6 +9,7 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">NAME</th>
+                        <th scope="col">PHONE</th>
                         <th scope="col">ADDRESS</th>
                         <th scope="col">EMAIL</th>
                         <th scope="col">EMAIL_VERIFIED_AT</th>
@@ -22,6 +23,7 @@
                     <tr>
                         <th class="align-middle" scope="row">{{ $user->id }}</th>
                         <td class="align-middle">{{ $user->name }}</td>
+                        <td class="align-middle">{{ $user->phone }}</td>
                         <td class="align-middle">{{ $user->address }}</td>
                         <td class="align-middle">{{ $user->email }}</td>
                         <td class="align-middle">{{ $user->email_verified_at }}</td>
