@@ -22,7 +22,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <meta property="og:image" content="https://storage.cloud.google.com/tnfarm.appspot.com/opengraph/banner1.jpg" />
 <meta property="og:image" content="https://storage.cloud.google.com/tnfarm.appspot.com/opengraph/banner2.jpg" />
 <meta property="og:image" content="https://storage.cloud.google.com/tnfarm.appspot.com/opengraph/banner3.jpg" />
-<!-- End Facebook Opengraph -->
+<meta property="og:image:type" content="image/jpg" />
+<meta property="og:image:width" content="640" />
+<meta property="og:image:height" content="427" />
+<!-- //Facebook Opengraph -->
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //custom-theme -->
@@ -58,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	});
 </script>
-<!-- start-smoth-scrolling -->
+<!-- //start-smoth-scrolling -->
 <!-- here starts scrolling icon -->
 <script type="text/javascript">
 	$(document).ready(function() {
