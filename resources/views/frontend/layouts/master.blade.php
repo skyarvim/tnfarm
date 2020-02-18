@@ -14,12 +14,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="keywords" content="Germinate Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <!-- Facebook Opengraph -->
+<meta property="og:url" content="https://www.tnfarm.tw/" />
+<meta property="og:locale" content="zh_TW" />
 <meta property="og:type" content="movie" />
 <meta property="og:title" content="台南農場 Tainan Farm" />
 <meta property="og:description" content="我們致力於推廣台南的農作物與特產品，希望能讓大家品嘗到來自南部的香甜美味。We are committed to promoting the crops and special products of Tainan, hoping that everyone can enjoy the sweet and delicious taste from the south."/>
-<meta property="og:image" content="https://storage.cloud.google.com/tnfarm.appspot.com/opengraph/banner1.jpg" />
-<meta property="og:image" content="https://storage.cloud.google.com/tnfarm.appspot.com/opengraph/banner2.jpg" />
-<meta property="og:image" content="https://storage.cloud.google.com/tnfarm.appspot.com/opengraph/banner3.jpg" />
+<meta property="og:image" content="https://www.tnfarm.tw/frontend/images/banner1.jpg" />
+<meta property="og:image" content="https://www.tnfarm.tw/frontend/images/banner2.jpg" />
+<meta property="og:image" content="https://www.tnfarm.tw/frontend/images/banner3.jpg" />
 <meta property="og:image:type" content="image/jpg" />
 <meta property="og:image:width" content="640" />
 <meta property="og:image:height" content="427" />
