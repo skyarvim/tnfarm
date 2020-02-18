@@ -10,15 +10,15 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <h6 class="card-header text-center">{{ __('請輸入電子郵件地址與密碼登入，若您尚未註冊請點選右上方註冊按鈕。') }}</h6>
-                <h6 class="card-header text-center">{{ __('Please enter your email address and password to log in. If you haven\'t registered yet, please click the register button on the top right.') }}</h6>
+                <h6 class="card-header text-center">{{ __('請輸入電子郵件與密碼登入，若您尚未註冊請點選右上方註冊按鈕。') }}</h6>
+                <h6 class="card-header text-center">{{ __('Please enter your email and password to log in. If you haven\'t registered yet, please click the register button on the top right.') }}</h6>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('電子郵件地址 E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('電子郵件 E-Mail') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>

@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master', ['bannerinfo' => false, 'bannerbottom' => false])
 
 @section('content')
-@include('frontend.layouts.breadcrumbs', ['icon' => 'fa fa-shield', 'title' => '驗證您的電子郵件地址 Verify Your Email Address', 'home' => false, 'description' => ''])
+@include('frontend.layouts.breadcrumbs', ['icon' => 'fa fa-shield', 'title' => '驗證您的電子郵件 Verify Your Email', 'home' => false, 'description' => ''])
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" defer></script>
 <!-- Styles -->
@@ -16,7 +16,7 @@
                 <div class="card-body">
                     @if (session('resent'))
                         <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
+                            {{ __('A fresh verification link has been sent to your email.') }}
                         </div>
                     @endif
 

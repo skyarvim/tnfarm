@@ -10,8 +10,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <h6 class="card-header">{{ __('請輸入電子郵件地址後送出密碼重置連結。') }}</h6>
-                <h6 class="card-header">{{ __('Please enter your email address and send password reset link.') }}</h6>
+                <h6 class="card-header">{{ __('請輸入電子郵件後送出密碼重置連結。') }}</h6>
+                <h6 class="card-header">{{ __('Please enter your email and send password reset link.') }}</h6>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -24,7 +24,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('電子郵件地址 E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('電子郵件 E-Mail') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>

@@ -10,8 +10,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <h6 class="card-header">{{ __('請輸入電子郵件地址、密碼與確認密碼後按下重設密碼。') }}</h6>
-                <h6 class="card-header">{{ __('Please enter email address, password and confirm password, then press reset password.') }}</h6>
+                <h6 class="card-header">{{ __('請輸入電子郵件、密碼與確認密碼後按下重設密碼。') }}</h6>
+                <h6 class="card-header">{{ __('Please enter email, password and confirm password, then press reset password.') }}</h6>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}">
@@ -20,7 +20,7 @@
                         <input type="hidden" name="token" value="{{ $token }}">
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('電子郵件地址 E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('電子郵件 E-Mail') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
