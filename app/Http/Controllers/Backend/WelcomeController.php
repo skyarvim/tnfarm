@@ -27,7 +27,7 @@ class WelcomeController extends Controller
             $file = $request->file('image');
             $fileName = time() . '_' . $file->getClientOriginalName();
             $storage = new StorageClient();
-            $bucket = $storage->bucket('tnfarm.appspot.com');
+            $bucket = $storage->bucket(env('GCS_BUCKET'));
             $bucket->upload(
                 fopen($file, 'r'),
                 ['name' => 'welcome/' . $fileName, 'predefinedAcl' => 'publicRead']
@@ -54,7 +54,7 @@ class WelcomeController extends Controller
         if ($request->hasFile('image')) {
             if ($welcome->image != 'default.jpg') {
                 $storage = new StorageClient();
-                $bucket = $storage->bucket('tnfarm.appspot.com');
+                $bucket = $storage->bucket(env('GCS_BUCKET'));
                 $object = $bucket->object('welcome/' . $welcome->image);
                 $object->delete();
     
@@ -62,7 +62,7 @@ class WelcomeController extends Controller
             $file = $request->file('image');
             $fileName = time() . '_' . $file->getClientOriginalName();
             $storage = new StorageClient();
-            $bucket = $storage->bucket('tnfarm.appspot.com');
+            $bucket = $storage->bucket(env('GCS_BUCKET'));
             $bucket->upload(
                 fopen($file, 'r'),
                 ['name' => 'welcome/' . $fileName, 'predefinedAcl' => 'publicRead']
@@ -80,7 +80,7 @@ class WelcomeController extends Controller
         $welcome = Welcome::find($id);
         if ($welcome->image != 'default.jpg') {
             $storage = new StorageClient();
-            $bucket = $storage->bucket('tnfarm.appspot.com');
+            $bucket = $storage->bucket(env('GCS_BUCKET'));
             $object = $bucket->object('welcome/' . $welcome->image);
             $object->delete();
         }

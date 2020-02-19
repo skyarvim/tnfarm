@@ -17,6 +17,7 @@ class ChangeUsersTable extends Migration
             $table->string('name')->nullable()->change();
             $table->string('address')->nullable()->after('name');
             $table->string('phone')->nullable()->after('name');
+            $table->boolean('active')->default(1);
         });
     }
 
@@ -28,9 +29,9 @@ class ChangeUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('active');
             $table->dropColumn('phone');
             $table->dropColumn('address');
-            $table->string('name')->nullable(false)->change();
         });
     }
 }

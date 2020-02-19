@@ -18,6 +18,6 @@ Auth::routes(['verify' => true]);
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
     Route::resource('/', 'Backend\WebsiteController', ['only' => 'index'])->middleware('isadmin');
-    Route::resource('/user', 'Backend\UserController', ['only' => 'index'])->middleware('isadmin');
+    Route::resource('/user', 'Backend\UserController', ['only' => ['index', 'edit', 'update', 'destroy']])->middleware('isadmin');
     Route::resource('/welcome', 'Backend\WelcomeController', ['except' => 'show'])->middleware('isadmin');
 });

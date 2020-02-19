@@ -9,7 +9,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="title">TITLE</label>
                 <div class="col-sm-10">
-                    <input class="form-control" type="text" name="title" value="{{$welcome->title}}">
+                    <input class="form-control" type="text" name="title" value="{{ $welcome->title }}">
                 </div>
             </div>
             <div class="form-group row">
@@ -17,7 +17,7 @@
                 <div class="col-sm-10">
                     <input class="form-control" type="file" name="image">
                 </div>
-                <img src="{{ asset('uploads/welcome/' . $welcome->image) }}" class="mt-3" style="height: 100%; width: 100%; object-fit: contain" onerror="this.src='{{ asset('uploads/welcome/default.jpg') }}'">
+                <img src="https://storage.googleapis.com/{{ env('GCS_BUCKET') }}/welcome/{{ $welcome->image }}" class="mt-3" style="height: 100%; width: 100%; object-fit: contain" onerror="this.src='{{ asset('uploads/welcome/default.jpg') }}'">
             </div>
             <div class="form-group row justify-content-end">
                 <div class="col-sm-1">

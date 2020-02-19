@@ -15,6 +15,7 @@
                         <th scope="col">EMAIL_VERIFIED_AT</th>
                         <th scope="col">CREATED_AT</th>
                         <th scope="col">UPDATED_AT</th>
+                        <th scope="col">ACTIVE</th>
                         <th scope="col">OPERATION</th>
                     </tr>
                 </thead>
@@ -29,7 +30,17 @@
                         <td class="align-middle">{{ $user->email_verified_at }}</td>
                         <td class="align-middle">{{ $user->created_at }}</td>
                         <td class="align-middle">{{ $user->updated_at }}</td>
+                        <td class="align-middle">{{ $user->active }}</td>
                         <td class="align-middle">
+                            <a href="{{ route('admin.user.edit', $user->id) }}" class="btn btn-primary">EDIT</a>
+                            @if( $user->email == 'arvim.chang@gmail.com' )
+                            @else
+                            <form method="POST" action="{{ route('admin.user.destroy', $user->id) }}">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <button type="submit" class="btn btn-secondary">DELETE</button>
+                            </form>
+                            @endif
                         </td>
                     </tr>
                     @empty
