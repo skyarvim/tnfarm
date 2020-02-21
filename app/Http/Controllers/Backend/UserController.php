@@ -9,6 +9,11 @@ use Google\Cloud\Storage\StorageClient;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('isadmin');
+    }
+
     public function index()
     {
         $users = User::orderBy('id')->get();

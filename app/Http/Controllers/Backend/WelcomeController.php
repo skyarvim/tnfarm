@@ -9,6 +9,11 @@ use Google\Cloud\Storage\StorageClient;
 
 class WelcomeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('isadmin');
+    }
+
     public function index()
     {
         $welcomes = Welcome::orderBy('id')->get();
@@ -57,7 +62,6 @@ class WelcomeController extends Controller
                 $bucket = $storage->bucket(env('GCS_BUCKET'));
                 $object = $bucket->object('welcome/' . $welcome->image);
                 $object->delete();
-    
             }
             $file = $request->file('image');
             $fileName = time() . '_' . $file->getClientOriginalName();

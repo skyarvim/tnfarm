@@ -12,10 +12,8 @@
 			<div class="agile_social_icons_banner">
 				<ul class="agileits_social_list">
 					@auth
-	                <li><a href="#" class="w3_agile_facebook"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-{{--
-					<li><a href="#" class="agile_twitter"><i class="fa fa-warehouse" aria-hidden="true"></i></a></li>
---}}
+	                <li><a href="{{ route('user') }}" class="w3_agile_facebook"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+					<li><a href="#" class="agile_twitter"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
 					<li><a href="#" class="w3_agile_dribble"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
 					<li><a href="{{ route('logout') }}" class="w3_agile_vimeo"
 						onclick="event.preventDefault();document.getElementById('logout-form').submit();">
@@ -69,7 +67,7 @@
 		</div>
 		<div class="thim-click-to-bottom">
 			<a href="#welcome" class="scroll">
-				<i class="fa  fa-chevron-down"></i>
+				<i class="fa fa-chevron-down"></i>
 			</a>
 		</div>
 @endif

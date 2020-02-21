@@ -7,9 +7,9 @@
             {{ csrf_field() }}
             {{ method_field('PUT') }}
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="status">STATUS</label>
+                <label class="col-sm-2 col-form-label" for="active">ACTIVE</label>
                 <div class="col-sm-10">
-                    <input class="form-control" type="text" name="status" value="{{ $user->status }}">
+                    <input class="form-control" type="text" name="active" value="{{ $user->active }}">
                 </div>
             </div>
             <div class="form-group row justify-content-end">

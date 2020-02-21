@@ -10,10 +10,12 @@
             </ul>
         </div>
         <div class="w3layouts_breadcrumbs_right">
+            @auth
+            <ul>
+                <li>{{ $description }}</li>
+            </ul>
+            @endauth
             @guest
-            @if( $description != 'Login' && $description != 'Register' )
-            <h2>{{ $description }}</h2>
-            @else
             <ul>
             @if( $description == 'Login' )
                 <li><i class="fa fa-registered" aria-hidden="true"></i><a href="{{ route('register') }}">註冊 Register</a></li>
@@ -22,7 +24,6 @@
                 <li><i class="fa fa-sign-in" aria-hidden="true"></i><a href="{{ route('login') }}">登入 Login</a></li>
             @endif
             </ul>
-            @endif
             @endguest
         </div>
     </div>
