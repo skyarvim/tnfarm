@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master', ['bannerinfo' => false, 'bannerbottom' => false])
 
 @section('content')
-@include('frontend.layouts.breadcrumbs', ['icon' => 'fa fa-user', 'title' => '會員資料', 'home' => false, 'description' => 'User Profile'])
+@include('frontend.layouts.breadcrumbs', ['icon' => 'fa fa-user', 'title' => '會員資訊', 'home' => false, 'description' => 'User Information'])
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" defer></script>
 <!-- Styles -->
@@ -14,8 +14,8 @@
                 <div class="card-body">
                     <i class="fa fa-id-card-o fa-5x mb-3"></i>
                     <h4>基本資料</h4>
-                    <h5>Information</h5>
-                    <a href="#" class="stretched-link"></a>
+                    <h5>Profile</h5>
+                    <a href="{{ route('user.profile.show', Auth::user()->id) }}" class="stretched-link"></a>
                 </div>
             </div>
         </div>

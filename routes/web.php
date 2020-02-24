@@ -11,20 +11,18 @@
 |
 */
 
-Route::get('/', 'Frontend\HomeController@index')->name('home');
-Route::get('/about', 'Frontend\AboutController@index')->name('about');
-Route::get('/user', 'Frontend\UserController@index')->name('user')->middleware('auth');
-
 Auth::routes(['verify' => true]);
-/*
-Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
-    Route::resource('/', 'Backend\WebsiteController', ['only' => 'index'])->middleware('isadmin');
-    Route::resource('/user', 'Backend\UserController', ['only' => ['index', 'edit', 'update', 'destroy']])->middleware('isadmin');
-    Route::resource('/welcome', 'Backend\WelcomeController', ['except' => 'show'])->middleware('isadmin');
-});
-*/
+
 Route::prefix('admin')->name('admin.')->group(function() {
     Route::resource('/', 'Backend\WebsiteController', ['only' => 'index']);
     Route::resource('/user', 'Backend\UserController', ['only' => ['index', 'edit', 'update', 'destroy']]);
     Route::resource('/welcome', 'Backend\WelcomeController', ['except' => 'show']);
+});
+
+Route::get('/', 'Frontend\HomeController@index')->name('home');
+Route::get('/about', 'Frontend\AboutController@index')->name('about');
+
+Route::prefix('user')->name('user.')->group(function() {
+    Route::resource('/', 'Frontend\UserController', ['only' => ['index']]);
+    Route::resource('/profile', 'Frontend\ProfileController', ['only' => ['show', 'edit', 'update']]);
 });

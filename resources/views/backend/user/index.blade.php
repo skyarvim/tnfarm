@@ -36,8 +36,8 @@
                             @if( $user->email == 'arvim.chang@gmail.com' )
                             @else
                             <form method="POST" action="{{ route('admin.user.destroy', $user->id) }}">
-                                {{ csrf_field() }}
-                                {{ method_field('DELETE') }}
+                                @csrf
+                                @method('DELETE')
                                 <button type="submit" class="btn btn-secondary">DELETE</button>
                             </form>
                             @endif

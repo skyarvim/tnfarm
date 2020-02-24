@@ -4,8 +4,8 @@
 <div class="container">
     <section class="page-section my-5 p-5">
         <form method="POST" action="{{ route('admin.welcome.update',  $welcome->id) }}" enctype="multipart/form-data">
-            {{ csrf_field() }}
-            {{ method_field('PUT') }}
+            @csrf
+            @method('PUT')
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="title">TITLE</label>
                 <div class="col-sm-10">

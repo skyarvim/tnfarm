@@ -27,8 +27,8 @@
                         <td class="align-middle">
                             <a href="{{ route('admin.welcome.edit', $welcome->id) }}" class="btn btn-primary">EDIT</a>
                             <form method="POST" action="{{ route('admin.welcome.destroy', $welcome->id) }}">
-                                {{ csrf_field() }}
-                                {{ method_field('DELETE') }}
+                                @csrf
+                                @method('DELETE')
                                 <button type="submit" class="btn btn-secondary">DELETE</button>
                             </form>
                         </td>

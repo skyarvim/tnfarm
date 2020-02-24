@@ -4,7 +4,7 @@
 <div class="container">
     <section class="page-section my-5 p-5">
         <form method="POST" action="{{ route('admin.welcome.store') }}" enctype="multipart/form-data">
-            {{ csrf_field() }}
+            @csrf
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="title">TITLE</label>
                 <div class="col-sm-10">
