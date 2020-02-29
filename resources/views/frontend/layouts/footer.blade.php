@@ -54,7 +54,7 @@
 	</div>
 	<div class="w3_agileits_footer_copy">
 		<div class="container">
-			<p>© 2020 台南農場 Tainan Farm. All rights reserved | Template design by <a href="http://w3layouts.com">W3layouts.</a></p>
+			<p>© {{ date('Y') }} 台南農場 Tainan Farm. All rights reserved | Template design by <a href="http://w3layouts.com">W3layouts.</a></p>
 		</div>
 	</div>
 </div>

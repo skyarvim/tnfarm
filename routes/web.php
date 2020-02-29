@@ -25,4 +25,6 @@ Route::get('/about', 'Frontend\AboutController@index')->name('about');
 Route::prefix('user')->name('user.')->group(function() {
     Route::resource('/', 'Frontend\UserController', ['only' => ['index']]);
     Route::resource('/profile', 'Frontend\ProfileController', ['only' => ['show', 'edit', 'update']]);
+    Route::resource('/product', 'Frontend\ProductController', ['except' => ['index']]);
+    Route::resource('/order', 'Frontend\OrderController', ['except' => ['index']]);
 });

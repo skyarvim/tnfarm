@@ -14,7 +14,7 @@ class CreateWelcomeTable extends Migration
     public function up()
     {
         Schema::create('welcome', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('title');
             $table->string('image');
         });

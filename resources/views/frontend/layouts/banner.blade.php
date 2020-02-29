@@ -12,10 +12,10 @@
 			<div class="agile_social_icons_banner">
 				<ul class="agileits_social_list">
 					@auth
-	                <li><a href="{{ route('user.index') }}" class="w3_agile_facebook"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-					<li><a href="#" class="agile_twitter"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
-					<li><a href="#" class="w3_agile_dribble"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-					<li><a href="{{ route('logout') }}" class="w3_agile_vimeo"
+	                <li><a href="{{ route('user.index') }}" class="list_user"><i class="fa fa-user @yield('list_user')" aria-hidden="true"></i></a></li>
+					<li><a href="#" class="list_store @yield('list_store')"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+					<li><a href="#" class="list_cart @yield('list_cart')"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+					<li><a href="{{ route('logout') }}" class="list_logout"
 						onclick="event.preventDefault();document.getElementById('logout-form').submit();">
 						<i class="fa fa-sign-out" aria-hidden="true"></i></a>
 					</li>
@@ -23,7 +23,7 @@
 						@csrf
 					</form>
 					@else
-	                <li><a href="{{ route('login') }}" class="w3_agile_vimeo"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+	                <li><a href="{{ route('login') }}" class="list_logout"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
 					@endauth
 				</ul>
 			</div>

@@ -90,16 +90,16 @@ input[type="submit"],input[type="reset"],a{
     display: inline-block;
     font-size: 1.2em;
 }
-a.w3_agile_facebook:hover{
+a.list_user:hover{
 	color:#3b5998;
 }
-a.agile_twitter:hover{
+a.list_store:hover{
 	color:#1da1f2;
 }
-a.w3_agile_dribble:hover{
+a.list_cart:hover{
 	color:#ea4c89;
 }
-a.w3_agile_vimeo:hover{
+a.list_logout:hover{
 	color:#1ab7ea;
 }
 .agile_social_icons_banner {

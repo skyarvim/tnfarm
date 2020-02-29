@@ -7,7 +7,7 @@
 <!-- Styles -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center text-center">
         <div class="col-md-8">
             <div class="card">
                 <h6 class="card-header">{{ __('在繼續之前，請檢查您的電子郵件以獲取驗證連結。') }}</h6>
@@ -16,6 +16,7 @@
                 <div class="card-body">
                     @if (session('resent'))
                         <div class="alert alert-success" role="alert">
+                            {{ __('新的驗證連結已發送到您的電子郵件。') }}</br>
                             {{ __('A fresh verification link has been sent to your email.') }}
                         </div>
                     @endif

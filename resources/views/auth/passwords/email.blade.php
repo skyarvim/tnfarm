@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master', ['bannerinfo' => false, 'bannerbottom' => false])
 
 @section('content')
-@include('frontend.layouts.breadcrumbs', ['icon' => 'fa fa-key', 'title' => '重置密碼 Reset Password', 'home' => false, 'description' => ''])
+@include('frontend.layouts.breadcrumbs', ['icon' => 'fa fa-key', 'title' => '重設密碼 Reset Password', 'home' => false, 'description' => ''])
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" defer></script>
 <!-- Styles -->
@@ -10,12 +10,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <h6 class="card-header">{{ __('請輸入電子郵件後送出密碼重置連結。') }}</h6>
-                <h6 class="card-header">{{ __('Please enter your email and send password reset link.') }}</h6>
+                <h6 class="card-header text-center">{{ __('請輸入電子郵件後送出密碼重設連結。') }}</h6>
+                <h6 class="card-header text-center">{{ __('Please enter your email and send password reset link.') }}</h6>
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
+                        <div class="alert alert-success text-center" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
@@ -40,7 +40,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('送出密碼重置連結 Send Password Reset Link') }}
+                                    {{ __('送出密碼重設連結 Send Password Reset Link') }}
                                 </button>
                             </div>
                         </div>

@@ -10,8 +10,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <h6 class="card-header">{{ __('請先確認密碼，然後再繼續。') }}</h6>
-                <h6 class="card-header">{{ __('Please confirm your password before continuing.') }}</h6>
+                <h6 class="card-header text-center">{{ __('請先確認密碼，然後再繼續。') }}</h6>
+                <h6 class="card-header text-center">{{ __('Please confirm your password before continuing.') }}</h6>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.confirm') }}">
