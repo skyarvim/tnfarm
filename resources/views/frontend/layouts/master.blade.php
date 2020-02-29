@@ -5,7 +5,7 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="{{ config('app.locale') }}">
 <head>
 <title>台南農場 Tainan Farm</title>
 <!-- custom-theme -->
