@@ -30,7 +30,7 @@
                             <i class="fa fa-th fa-5x mb-3"></i>
                             <h4>商品設定</h4>
                             <h5>Product</h5>
-                            <a href="{{ route('user.product.show', Auth::user()->id) }}" class="stretched-link"></a>
+                            <a href="#" class="stretched-link"></a>
                         </div>
                     </div>
                 </div>
