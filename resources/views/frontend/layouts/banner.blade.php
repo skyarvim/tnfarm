@@ -38,7 +38,9 @@
 						<nav class="menu menu--horatio link-effect-8" id="link-effect-8">
 							<ul class="w3layouts_menu__list">
 								<li class="@yield('menu_home')"><a href="{{ route('home') }}">Home</a></li>
+{{--
 								<li class="@yield('menu_about')"><a href="{{ route('about') }}">About</a></li>
+--}}
 							</ul>
 						</nav>
 					</div>
